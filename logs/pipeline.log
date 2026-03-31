@@ -1,0 +1,336 @@
+[2026-03-28 17:46:04] INFO     test — Logger works
+[2026-03-28 17:47:30] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 17:56:32] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 17:58:13] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 17:58:14] INFO     load_nslkdd — Loaded 125,973 rows, 42 columns
+[2026-03-28 17:58:14] WARNING  load_nslkdd — Column count mismatch: got 42, expected 43. Skipping rename.
+[2026-03-28 17:59:40] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 17:59:41] INFO     load_nslkdd — Loaded 125,973 rows, 42 columns
+[2026-03-28 17:59:41] WARNING  load_nslkdd — Column count mismatch: got 42, expected 43. Skipping rename.
+[2026-03-28 17:59:50] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 17:59:52] INFO     load_nslkdd — Loaded 125,973 rows, 42 columns
+[2026-03-28 17:59:52] WARNING  load_nslkdd — Column count mismatch: got 42, expected 43. Skipping rename.
+[2026-03-28 18:00:57] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 18:00:58] INFO     load_nslkdd — Loaded 125,973 rows, 42 columns
+[2026-03-28 18:00:58] WARNING  load_nslkdd — 58630 rows have unrecognised labels — setting to 1 (attack)
+[2026-03-28 18:01:00] INFO     load_nslkdd — Label distribution:
+label_binary
+0    67343
+1    58630
+[2026-03-28 18:01:00] INFO     load_nslkdd — Attack types found: ['anomaly', 'normal']
+[2026-03-28 18:01:00] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTest+.arff
+[2026-03-28 18:01:00] INFO     load_nslkdd — Loaded 22,544 rows, 42 columns
+[2026-03-28 18:01:00] WARNING  load_nslkdd — 12833 rows have unrecognised labels — setting to 1 (attack)
+[2026-03-28 18:01:01] INFO     load_nslkdd — Label distribution:
+label_binary
+1    12833
+0     9711
+[2026-03-28 18:01:01] INFO     load_nslkdd — Attack types found: ['anomaly', 'normal']
+[2026-03-28 18:03:56] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTrain+.arff
+[2026-03-28 18:03:57] INFO     load_nslkdd — Loaded 125,973 rows, 42 columns
+[2026-03-28 18:03:59] INFO     load_nslkdd — Saved interim file -> D:\behavioural-security-layer\data\interim\nslkdd_train.csv
+[2026-03-28 18:03:59] INFO     load_nslkdd — Label distribution:
+label_binary
+0    67343
+1    58630
+[2026-03-28 18:03:59] INFO     load_nslkdd — Attack types found: ['anomaly', 'normal']
+[2026-03-28 18:03:59] INFO     load_nslkdd — Loading ARFF file: D:\behavioural-security-layer\data\raw\nslkdd\KDDTest+.arff
+[2026-03-28 18:03:59] INFO     load_nslkdd — Loaded 22,544 rows, 42 columns
+[2026-03-28 18:03:59] INFO     load_nslkdd — Saved interim file -> D:\behavioural-security-layer\data\interim\nslkdd_test.csv
+[2026-03-28 18:03:59] INFO     load_nslkdd — Label distribution:
+label_binary
+1    12833
+0     9711
+[2026-03-28 18:03:59] INFO     load_nslkdd — Attack types found: ['anomaly', 'normal']
+[2026-03-28 18:05:22] INFO     cleaner — Reading D:\behavioural-security-layer\data\interim\nslkdd_train.csv
+[2026-03-28 18:05:22] INFO     cleaner — --- Cleaning train split (125,973 rows) ---
+[2026-03-28 18:05:22] INFO     cleaner — Fixing dtypes...
+[2026-03-28 18:05:23] INFO     cleaner — No null values found.
+[2026-03-28 18:05:23] INFO     cleaner — Dropped columns: ['label', 'attack_type']
+[2026-03-28 18:05:23] INFO     cleaner — Final shape: (125973, 42)
+[2026-03-28 18:05:23] INFO     cleaner — Columns: ['duration', 'protocol_type', 'service', 'flag', 'src_bytes', 'dst_bytes', 'land', 'wrong_fragment', 'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted', 'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds', 'is_host_login', 'is_guest_login', 'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count', 'dst_host_srv_count', 'dst_host_same_srv_rate', 'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate', 'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate', 'label_binary']
+[2026-03-28 18:05:23] INFO     cleaner — Dtypes:
+duration                         int64
+protocol_type                      str
+service                            str
+flag                               str
+src_bytes                        int64
+dst_bytes                        int64
+land                             int64
+wrong_fragment                   int64
+urgent                           int64
+hot                              int64
+num_failed_logins                int64
+logged_in                        int64
+num_compromised                  int64
+root_shell                       int64
+su_attempted                     int64
+num_root                         int64
+num_file_creations               int64
+num_shells                       int64
+num_access_files                 int64
+num_outbound_cmds                int64
+is_host_login                    int64
+is_guest_login                   int64
+count                            int64
+srv_count                        int64
+serror_rate                    float64
+srv_serror_rate                float64
+rerror_rate                    float64
+srv_rerror_rate                float64
+same_srv_rate                  float64
+diff_srv_rate                  float64
+srv_diff_host_rate             float64
+dst_host_count                   int64
+dst_host_srv_count               int64
+dst_host_same_srv_rate         float64
+dst_host_diff_srv_rate         float64
+dst_host_same_src_port_rate    float64
+dst_host_srv_diff_host_rate    float64
+dst_host_serror_rate           float64
+dst_host_srv_serror_rate       float64
+dst_host_rerror_rate           float64
+dst_host_srv_rerror_rate       float64
+label_binary                     int64
+[2026-03-28 18:05:26] INFO     cleaner — Saved cleaned file -> D:\behavioural-security-layer\data\processed\nslkdd_train_clean.csv
+[2026-03-28 18:05:26] INFO     cleaner — Reading D:\behavioural-security-layer\data\interim\nslkdd_test.csv
+[2026-03-28 18:05:26] INFO     cleaner — --- Cleaning test split (22,544 rows) ---
+[2026-03-28 18:05:26] INFO     cleaner — Fixing dtypes...
+[2026-03-28 18:05:26] INFO     cleaner — No null values found.
+[2026-03-28 18:05:26] INFO     cleaner — Dropped columns: ['label', 'attack_type']
+[2026-03-28 18:05:26] INFO     cleaner — Final shape: (22544, 42)
+[2026-03-28 18:05:26] INFO     cleaner — Columns: ['duration', 'protocol_type', 'service', 'flag', 'src_bytes', 'dst_bytes', 'land', 'wrong_fragment', 'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted', 'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds', 'is_host_login', 'is_guest_login', 'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'dst_host_count', 'dst_host_srv_count', 'dst_host_same_srv_rate', 'dst_host_diff_srv_rate', 'dst_host_same_src_port_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate', 'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate', 'label_binary']
+[2026-03-28 18:05:26] INFO     cleaner — Dtypes:
+duration                         int64
+protocol_type                      str
+service                            str
+flag                               str
+src_bytes                        int64
+dst_bytes                        int64
+land                             int64
+wrong_fragment                   int64
+urgent                           int64
+hot                              int64
+num_failed_logins                int64
+logged_in                        int64
+num_compromised                  int64
+root_shell                       int64
+su_attempted                     int64
+num_root                         int64
+num_file_creations               int64
+num_shells                       int64
+num_access_files                 int64
+num_outbound_cmds                int64
+is_host_login                    int64
+is_guest_login                   int64
+count                            int64
+srv_count                        int64
+serror_rate                    float64
+srv_serror_rate                float64
+rerror_rate                    float64
+srv_rerror_rate                float64
+same_srv_rate                  float64
+diff_srv_rate                  float64
+srv_diff_host_rate             float64
+dst_host_count                   int64
+dst_host_srv_count               int64
+dst_host_same_srv_rate         float64
+dst_host_diff_srv_rate         float64
+dst_host_same_src_port_rate    float64
+dst_host_srv_diff_host_rate    float64
+dst_host_serror_rate           float64
+dst_host_srv_serror_rate       float64
+dst_host_rerror_rate           float64
+dst_host_srv_rerror_rate       float64
+label_binary                     int64
+[2026-03-28 18:05:27] INFO     cleaner — Saved cleaned file -> D:\behavioural-security-layer\data\processed\nslkdd_test_clean.csv
+[2026-03-28 18:06:39] INFO     validator — Loading D:\behavioural-security-layer\data\processed\nslkdd_train_clean.csv
+[2026-03-28 18:06:39] INFO     validator — [train] Running validation on 125,973 rows...
+[2026-03-28 18:06:39] INFO     validator — Required columns check: PASSED
+[2026-03-28 18:06:39] INFO     validator — Null check: PASSED
+[2026-03-28 18:06:39] INFO     validator — Label integrity check: PASSED — distribution: {0: 67343, 1: 58630}
+[2026-03-28 18:06:39] INFO     validator — Non-negative check: PASSED
+[2026-03-28 18:06:39] INFO     validator — [train] All validation checks PASSED
+[2026-03-28 18:06:39] INFO     validator — Loading D:\behavioural-security-layer\data\processed\nslkdd_test_clean.csv
+[2026-03-28 18:06:39] INFO     validator — [test] Running validation on 22,544 rows...
+[2026-03-28 18:06:39] INFO     validator — Required columns check: PASSED
+[2026-03-28 18:06:39] INFO     validator — Null check: PASSED
+[2026-03-28 18:06:39] INFO     validator — Label integrity check: PASSED — distribution: {1: 12833, 0: 9711}
+[2026-03-28 18:06:39] INFO     validator — Non-negative check: PASSED
+[2026-03-28 18:06:39] INFO     validator — [test] All validation checks PASSED
+[2026-03-28 18:25:28] INFO     network_features — Building network features on 125,973 rows...
+[2026-03-28 18:25:29] INFO     network_features — Encoded 'protocol_type' -> 3 unique values
+[2026-03-28 18:25:29] INFO     network_features — Encoded 'service' -> 70 unique values
+[2026-03-28 18:25:29] INFO     network_features — Encoded 'flag' -> 11 unique values
+[2026-03-28 18:25:29] INFO     network_features — Computed bytes_ratio
+[2026-03-28 18:25:29] INFO     network_features — Computed is_large_transfer (threshold=10000.0) — 1.9% of connections flagged
+[2026-03-28 18:25:29] INFO     network_features — Computed connection_rate
+[2026-03-28 18:25:29] INFO     network_features — Network features added: ['bytes_ratio', 'is_large_transfer', 'connection_rate']
+[2026-03-28 18:25:29] INFO     network_features — Building network features on 22,544 rows...
+[2026-03-28 18:25:29] INFO     network_features — Encoded 'protocol_type' -> 3 unique values
+[2026-03-28 18:25:29] INFO     network_features — Encoded 'service' -> 64 unique values
+[2026-03-28 18:25:29] INFO     network_features — Encoded 'flag' -> 11 unique values
+[2026-03-28 18:25:29] INFO     network_features — Computed bytes_ratio
+[2026-03-28 18:25:29] INFO     network_features — Computed is_large_transfer (threshold=10000.0) — 5.2% of connections flagged
+[2026-03-28 18:25:29] INFO     network_features — Computed connection_rate
+[2026-03-28 18:25:29] INFO     network_features — Network features added: ['bytes_ratio', 'is_large_transfer', 'connection_rate']
+[2026-03-28 18:29:09] INFO     auth_features — Building auth features on 125,973 rows...
+[2026-03-28 18:29:09] INFO     auth_features — Computed auth_failure_rate
+[2026-03-28 18:29:09] INFO     auth_features — Computed is_root_escalation — 0.14% of connections flagged
+[2026-03-28 18:29:09] INFO     auth_features — Computed privilege_abuse_score
+[2026-03-28 18:29:09] INFO     auth_features — Computed anomalous_login_flag — 0.94% of connections flagged
+[2026-03-28 18:29:09] INFO     auth_features — Auth features added: ['auth_failure_rate', 'is_root_escalation', 'privilege_abuse_score', 'anomalous_login_flag']
+[2026-03-28 18:29:09] INFO     auth_features — Building auth features on 22,544 rows...
+[2026-03-28 18:29:09] INFO     auth_features — Computed auth_failure_rate
+[2026-03-28 18:29:09] INFO     auth_features — Computed is_root_escalation — 0.25% of connections flagged
+[2026-03-28 18:29:09] INFO     auth_features — Computed privilege_abuse_score
+[2026-03-28 18:29:09] INFO     auth_features — Computed anomalous_login_flag — 2.89% of connections flagged
+[2026-03-28 18:29:09] INFO     auth_features — Auth features added: ['auth_failure_rate', 'is_root_escalation', 'privilege_abuse_score', 'anomalous_login_flag']
+[2026-03-28 18:30:40] INFO     session_features — Building session features on 125,973 rows...
+[2026-03-28 18:30:40] INFO     session_features — Computed error_rate_combined
+[2026-03-28 18:30:40] INFO     session_features — Computed service_diversity_score
+[2026-03-28 18:30:40] INFO     session_features — Computed dst_host_suspicion_score
+[2026-03-28 18:30:40] INFO     session_features — Computed same_service_ratio_delta
+[2026-03-28 18:30:40] INFO     session_features — Session features added: ['error_rate_combined', 'service_diversity_score', 'dst_host_suspicion_score', 'same_service_ratio_delta']
+[2026-03-28 18:30:40] INFO     session_features — Building session features on 22,544 rows...
+[2026-03-28 18:30:40] INFO     session_features — Computed error_rate_combined
+[2026-03-28 18:30:40] INFO     session_features — Computed service_diversity_score
+[2026-03-28 18:30:40] INFO     session_features — Computed dst_host_suspicion_score
+[2026-03-28 18:30:40] INFO     session_features — Computed same_service_ratio_delta
+[2026-03-28 18:30:40] INFO     session_features — Session features added: ['error_rate_combined', 'service_diversity_score', 'dst_host_suspicion_score', 'same_service_ratio_delta']
+[2026-03-28 18:39:47] INFO     file_features — Building file features on 125,973 rows...
+[2026-03-28 18:39:47] INFO     file_features — Computed file_access_intensity
+[2026-03-28 18:39:47] INFO     file_features — Computed is_suspicious_file_activity (creation>2, access>5) — 0.08% flagged
+[2026-03-28 18:39:47] INFO     file_features — Computed access_to_creation_ratio (clipped at 99th pct=0.00)
+[2026-03-28 18:39:47] INFO     file_features — Computed outbound_cmd_flag — 0.00% of connections flagged
+[2026-03-28 18:39:47] INFO     file_features — File features added: ['file_access_intensity', 'is_suspicious_file_activity', 'access_to_creation_ratio', 'outbound_cmd_flag']
+[2026-03-28 18:39:47] INFO     file_features — Building file features on 22,544 rows...
+[2026-03-28 18:39:47] INFO     file_features — Computed file_access_intensity
+[2026-03-28 18:39:47] INFO     file_features — Computed is_suspicious_file_activity (creation>2, access>5) — 0.07% flagged
+[2026-03-28 18:39:47] INFO     file_features — Computed access_to_creation_ratio (clipped at 99th pct=0.00)
+[2026-03-28 18:39:47] INFO     file_features — Computed outbound_cmd_flag — 0.00% of connections flagged
+[2026-03-28 18:39:47] INFO     file_features — File features added: ['file_access_intensity', 'is_suspicious_file_activity', 'access_to_creation_ratio', 'outbound_cmd_flag']
+[2026-03-28 18:41:01] INFO     peer_features — Building peer features on 125,973 rows...
+[2026-03-28 18:41:01] INFO     peer_features — Computing peer group stats, grouping by 'protocol_type'...
+[2026-03-28 18:41:01] INFO     peer_features — Peer stats computed for 6 features across 3 peer groups
+[2026-03-28 18:41:01] INFO     peer_features — Computed peer_outlier_score — 0.0% of connections score above 0.5
+[2026-03-28 18:41:01] INFO     peer_features — Computed bytes_above_peer_mean — 0.35% exceed 7.3x peer mean (proposal alert threshold)
+[2026-03-28 18:41:01] INFO     peer_features — Peer features complete. New shape: (125973, 56)
+[2026-03-28 18:41:01] INFO     peer_features — Building peer features on 22,544 rows...
+[2026-03-28 18:41:01] INFO     peer_features — Computing peer group stats, grouping by 'protocol_type'...
+[2026-03-28 18:41:01] INFO     peer_features — Peer stats computed for 6 features across 3 peer groups
+[2026-03-28 18:41:01] INFO     peer_features — Computed peer_outlier_score — 0.0% of connections score above 0.5
+[2026-03-28 18:41:01] INFO     peer_features — Computed bytes_above_peer_mean — 1.25% exceed 7.3x peer mean (proposal alert threshold)
+[2026-03-28 18:41:01] INFO     peer_features — Peer features complete. New shape: (22544, 56)
+[2026-03-28 18:42:32] INFO     genai_features — Building GenAI features on 125,973 rows...
+[2026-03-28 18:42:32] INFO     genai_features — Computed api_call_pattern_score
+[2026-03-28 18:42:32] INFO     genai_features — Computed data_exfil_proxy (99th pct clip=54540.00)
+[2026-03-28 18:42:32] INFO     genai_features — Computed rapid_request_flag (threshold=50) — 39.7% flagged
+[2026-03-28 18:42:32] INFO     genai_features — Computed genai_composite_score — 3.28% of connections score above 0.3
+[2026-03-28 18:42:32] INFO     genai_features — GenAI features added: ['api_call_pattern_score', 'data_exfil_proxy', 'rapid_request_flag', 'genai_composite_score']
+[2026-03-28 18:42:33] INFO     genai_features — Building GenAI features on 22,544 rows...
+[2026-03-28 18:42:33] INFO     genai_features — Computed api_call_pattern_score
+[2026-03-28 18:42:33] INFO     genai_features — Computed data_exfil_proxy (99th pct clip=54540.00)
+[2026-03-28 18:42:33] INFO     genai_features — Computed rapid_request_flag (threshold=50) — 32.5% flagged
+[2026-03-28 18:42:33] INFO     genai_features — Computed genai_composite_score — 6.43% of connections score above 0.3
+[2026-03-28 18:42:33] INFO     genai_features — GenAI features added: ['api_call_pattern_score', 'data_exfil_proxy', 'rapid_request_flag', 'genai_composite_score']
+[2026-03-28 18:43:25] INFO     feature_pipeline — Loading D:\behavioural-security-layer\data\processed\nslkdd_train_clean.csv
+[2026-03-28 18:43:26] INFO     feature_pipeline — [train] Starting feature pipeline on 125,973 rows...
+[2026-03-28 18:43:26] INFO     peer_features — Building peer features on 125,973 rows...
+[2026-03-28 18:43:26] INFO     peer_features — Computing peer group stats, grouping by 'protocol_type'...
+[2026-03-28 18:43:26] INFO     peer_features — Peer stats computed for 6 features across 3 peer groups
+[2026-03-28 18:43:26] INFO     peer_features — Computed peer_outlier_score — 0.0% of connections score above 0.5
+[2026-03-28 18:43:26] INFO     peer_features — Computed bytes_above_peer_mean — 0.35% exceed 7.3x peer mean (proposal alert threshold)
+[2026-03-28 18:43:26] INFO     peer_features — Peer features complete. New shape: (125973, 56)
+[2026-03-28 18:43:26] INFO     network_features — Building network features on 125,973 rows...
+[2026-03-28 18:43:26] INFO     network_features — Encoded 'protocol_type' -> 3 unique values
+[2026-03-28 18:43:26] INFO     network_features — Encoded 'service' -> 70 unique values
+[2026-03-28 18:43:26] INFO     network_features — Encoded 'flag' -> 11 unique values
+[2026-03-28 18:43:26] INFO     network_features — Computed bytes_ratio
+[2026-03-28 18:43:26] INFO     network_features — Computed is_large_transfer (threshold=10000.0) — 1.9% of connections flagged
+[2026-03-28 18:43:26] INFO     network_features — Computed connection_rate
+[2026-03-28 18:43:26] INFO     network_features — Network features added: ['bytes_ratio', 'is_large_transfer', 'connection_rate']
+[2026-03-28 18:43:26] INFO     auth_features — Building auth features on 125,973 rows...
+[2026-03-28 18:43:26] INFO     auth_features — Computed auth_failure_rate
+[2026-03-28 18:43:26] INFO     auth_features — Computed is_root_escalation — 0.14% of connections flagged
+[2026-03-28 18:43:26] INFO     auth_features — Computed privilege_abuse_score
+[2026-03-28 18:43:26] INFO     auth_features — Computed anomalous_login_flag — 0.94% of connections flagged
+[2026-03-28 18:43:26] INFO     auth_features — Auth features added: ['auth_failure_rate', 'is_root_escalation', 'privilege_abuse_score', 'anomalous_login_flag']
+[2026-03-28 18:43:26] INFO     session_features — Building session features on 125,973 rows...
+[2026-03-28 18:43:26] INFO     session_features — Computed error_rate_combined
+[2026-03-28 18:43:26] INFO     session_features — Computed service_diversity_score
+[2026-03-28 18:43:26] INFO     session_features — Computed dst_host_suspicion_score
+[2026-03-28 18:43:26] INFO     session_features — Computed same_service_ratio_delta
+[2026-03-28 18:43:26] INFO     session_features — Session features added: ['error_rate_combined', 'service_diversity_score', 'dst_host_suspicion_score', 'same_service_ratio_delta']
+[2026-03-28 18:43:26] INFO     file_features — Building file features on 125,973 rows...
+[2026-03-28 18:43:26] INFO     file_features — Computed file_access_intensity
+[2026-03-28 18:43:26] INFO     file_features — Computed is_suspicious_file_activity (creation>2, access>5) — 0.08% flagged
+[2026-03-28 18:43:26] INFO     file_features — Computed access_to_creation_ratio (clipped at 99th pct=0.00)
+[2026-03-28 18:43:26] INFO     file_features — Computed outbound_cmd_flag — 0.00% of connections flagged
+[2026-03-28 18:43:26] INFO     file_features — File features added: ['file_access_intensity', 'is_suspicious_file_activity', 'access_to_creation_ratio', 'outbound_cmd_flag']
+[2026-03-28 18:43:26] INFO     genai_features — Building GenAI features on 125,973 rows...
+[2026-03-28 18:43:26] INFO     genai_features — Computed api_call_pattern_score
+[2026-03-28 18:43:26] INFO     genai_features — Computed data_exfil_proxy (99th pct clip=54540.00)
+[2026-03-28 18:43:26] INFO     genai_features — Computed rapid_request_flag (threshold=50) — 39.7% flagged
+[2026-03-28 18:43:26] INFO     genai_features — Computed genai_composite_score — 3.28% of connections score above 0.3
+[2026-03-28 18:43:26] INFO     genai_features — GenAI features added: ['api_call_pattern_score', 'data_exfil_proxy', 'rapid_request_flag', 'genai_composite_score']
+[2026-03-28 18:43:26] INFO     feature_pipeline — [train] Dropped intermediate columns: ['src_bytes_peer_mean', 'dst_bytes_peer_mean', 'duration_peer_mean', 'num_failed_logins_peer_mean', 'count_peer_mean', 'srv_count_peer_mean']
+[2026-03-28 18:43:26] INFO     feature_pipeline — [train] Feature pipeline complete. Final shape: (125973, 69)
+[2026-03-28 18:43:26] INFO     feature_pipeline — [train] Total features: 68 + 1 label
+[2026-03-28 18:43:26] INFO     validator — [train] Running validation on 125,973 rows...
+[2026-03-28 18:43:26] INFO     validator — Required columns check: PASSED
+[2026-03-28 18:43:26] INFO     validator — Null check: PASSED
+[2026-03-28 18:43:26] INFO     validator — Label integrity check: PASSED — distribution: {0: 67343, 1: 58630}
+[2026-03-28 18:43:26] INFO     validator — Non-negative check: PASSED
+[2026-03-28 18:43:26] INFO     validator — [train] All validation checks PASSED
+[2026-03-28 18:43:32] INFO     feature_pipeline — [train] Saved -> D:\behavioural-security-layer\data\processed\nslkdd_train_features.csv
+[2026-03-28 18:43:32] INFO     feature_pipeline — Loading D:\behavioural-security-layer\data\processed\nslkdd_test_clean.csv
+[2026-03-28 18:43:32] INFO     feature_pipeline — [test] Starting feature pipeline on 22,544 rows...
+[2026-03-28 18:43:32] INFO     peer_features — Building peer features on 22,544 rows...
+[2026-03-28 18:43:32] INFO     peer_features — Computing peer group stats, grouping by 'protocol_type'...
+[2026-03-28 18:43:32] INFO     peer_features — Peer stats computed for 6 features across 3 peer groups
+[2026-03-28 18:43:32] INFO     peer_features — Computed peer_outlier_score — 0.0% of connections score above 0.5
+[2026-03-28 18:43:32] INFO     peer_features — Computed bytes_above_peer_mean — 1.25% exceed 7.3x peer mean (proposal alert threshold)
+[2026-03-28 18:43:32] INFO     peer_features — Peer features complete. New shape: (22544, 56)
+[2026-03-28 18:43:32] INFO     network_features — Building network features on 22,544 rows...
+[2026-03-28 18:43:32] INFO     network_features — Encoded 'protocol_type' -> 3 unique values
+[2026-03-28 18:43:32] INFO     network_features — Encoded 'service' -> 64 unique values
+[2026-03-28 18:43:32] INFO     network_features — Encoded 'flag' -> 11 unique values
+[2026-03-28 18:43:32] INFO     network_features — Computed bytes_ratio
+[2026-03-28 18:43:32] INFO     network_features — Computed is_large_transfer (threshold=10000.0) — 5.2% of connections flagged
+[2026-03-28 18:43:32] INFO     network_features — Computed connection_rate
+[2026-03-28 18:43:32] INFO     network_features — Network features added: ['bytes_ratio', 'is_large_transfer', 'connection_rate']
+[2026-03-28 18:43:32] INFO     auth_features — Building auth features on 22,544 rows...
+[2026-03-28 18:43:32] INFO     auth_features — Computed auth_failure_rate
+[2026-03-28 18:43:32] INFO     auth_features — Computed is_root_escalation — 0.25% of connections flagged
+[2026-03-28 18:43:32] INFO     auth_features — Computed privilege_abuse_score
+[2026-03-28 18:43:32] INFO     auth_features — Computed anomalous_login_flag — 2.89% of connections flagged
+[2026-03-28 18:43:32] INFO     auth_features — Auth features added: ['auth_failure_rate', 'is_root_escalation', 'privilege_abuse_score', 'anomalous_login_flag']
+[2026-03-28 18:43:32] INFO     session_features — Building session features on 22,544 rows...
+[2026-03-28 18:43:32] INFO     session_features — Computed error_rate_combined
+[2026-03-28 18:43:32] INFO     session_features — Computed service_diversity_score
+[2026-03-28 18:43:32] INFO     session_features — Computed dst_host_suspicion_score
+[2026-03-28 18:43:32] INFO     session_features — Computed same_service_ratio_delta
+[2026-03-28 18:43:32] INFO     session_features — Session features added: ['error_rate_combined', 'service_diversity_score', 'dst_host_suspicion_score', 'same_service_ratio_delta']
+[2026-03-28 18:43:32] INFO     file_features — Building file features on 22,544 rows...
+[2026-03-28 18:43:32] INFO     file_features — Computed file_access_intensity
+[2026-03-28 18:43:32] INFO     file_features — Computed is_suspicious_file_activity (creation>2, access>5) — 0.07% flagged
+[2026-03-28 18:43:32] INFO     file_features — Computed access_to_creation_ratio (clipped at 99th pct=0.00)
+[2026-03-28 18:43:32] INFO     file_features — Computed outbound_cmd_flag — 0.00% of connections flagged
+[2026-03-28 18:43:32] INFO     file_features — File features added: ['file_access_intensity', 'is_suspicious_file_activity', 'access_to_creation_ratio', 'outbound_cmd_flag']
+[2026-03-28 18:43:32] INFO     genai_features — Building GenAI features on 22,544 rows...
+[2026-03-28 18:43:32] INFO     genai_features — Computed api_call_pattern_score
+[2026-03-28 18:43:32] INFO     genai_features — Computed data_exfil_proxy (99th pct clip=54540.00)
+[2026-03-28 18:43:32] INFO     genai_features — Computed rapid_request_flag (threshold=50) — 32.5% flagged
+[2026-03-28 18:43:32] INFO     genai_features — Computed genai_composite_score — 6.43% of connections score above 0.3
+[2026-03-28 18:43:32] INFO     genai_features — GenAI features added: ['api_call_pattern_score', 'data_exfil_proxy', 'rapid_request_flag', 'genai_composite_score']
+[2026-03-28 18:43:32] INFO     feature_pipeline — [test] Dropped intermediate columns: ['src_bytes_peer_mean', 'dst_bytes_peer_mean', 'duration_peer_mean', 'num_failed_logins_peer_mean', 'count_peer_mean', 'srv_count_peer_mean']
+[2026-03-28 18:43:32] INFO     feature_pipeline — [test] Feature pipeline complete. Final shape: (22544, 69)
+[2026-03-28 18:43:32] INFO     feature_pipeline — [test] Total features: 68 + 1 label
+[2026-03-28 18:43:32] INFO     validator — [test] Running validation on 22,544 rows...
+[2026-03-28 18:43:32] INFO     validator — Required columns check: PASSED
+[2026-03-28 18:43:32] INFO     validator — Null check: PASSED
+[2026-03-28 18:43:32] INFO     validator — Label integrity check: PASSED — distribution: {1: 12833, 0: 9711}
+[2026-03-28 18:43:32] INFO     validator — Non-negative check: PASSED
+[2026-03-28 18:43:32] INFO     validator — [test] All validation checks PASSED
+[2026-03-28 18:43:33] INFO     feature_pipeline — [test] Saved -> D:\behavioural-security-layer\data\processed\nslkdd_test_features.csv
