@@ -334,3 +334,136 @@ label_binary                     int64
 [2026-03-28 18:43:32] INFO     validator — Non-negative check: PASSED
 [2026-03-28 18:43:32] INFO     validator — [test] All validation checks PASSED
 [2026-03-28 18:43:33] INFO     feature_pipeline — [test] Saved -> D:\behavioural-security-layer\data\processed\nslkdd_test_features.csv
+[2026-03-31 18:51:43] INFO     clustering — Loading D:\behavioural-security-layer\data\processed\nslkdd_train_features.csv
+[2026-03-31 18:51:45] INFO     clustering — Using 16 features for clustering
+[2026-03-31 18:51:45] INFO     clustering — Fitted StandardScaler on clustering features
+[2026-03-31 18:51:45] INFO     clustering — Scaler saved -> D:\behavioural-security-layer\data\metadata\cluster_scaler.pkl
+[2026-03-31 18:51:45] INFO     clustering — Searching optimal k in range [3, 4, 5, 6, 7, 8, 9, 10, 11]...
+[2026-03-31 18:52:16] INFO     clustering — Optimal k selected: 6 (silhouette=0.5212)
+[2026-03-31 18:52:16] INFO     clustering — Using k=6
+[2026-03-31 18:52:16] INFO     clustering — Fitting K-Means with k=6 on 125,973 samples...
+[2026-03-31 18:52:18] INFO     clustering — K-Means fitting complete
+[2026-03-31 18:52:18] INFO     clustering — KMeans model saved -> D:\behavioural-security-layer\data\metadata\kmeans_model.pkl
+[2026-03-31 18:52:18] INFO     clustering — Cluster profiles built for 6 clusters
+[2026-03-31 18:52:18] INFO     clustering — Profiles saved -> D:\behavioural-security-layer\data\metadata\cluster_profiles.csv
+[2026-03-31 18:52:18] INFO     clustering — 
+Cluster summary:
+[2026-03-31 18:52:18] INFO     clustering —   Cluster  0 | size= 72,414 ( 57.5%) | attack_rate=  15.4%
+[2026-03-31 18:52:18] INFO     clustering —   Cluster  1 | size= 41,705 ( 33.1%) | attack_rate=  99.0%
+[2026-03-31 18:52:18] INFO     clustering —   Cluster  2 | size=      4 (  0.0%) | attack_rate= 100.0%
+[2026-03-31 18:52:18] INFO     clustering —   Cluster  3 | size=  5,298 (  4.2%) | attack_rate=  40.5%
+[2026-03-31 18:52:18] INFO     clustering —   Cluster  4 | size=  1,135 (  0.9%) | attack_rate=  71.7%
+[2026-03-31 18:52:18] INFO     clustering —   Cluster  5 | size=  5,417 (  4.3%) | attack_rate=  59.9%
+[2026-03-31 18:52:18] INFO     clustering — Loading D:\behavioural-security-layer\data\processed\nslkdd_test_features.csv
+[2026-03-31 18:52:19] INFO     clustering — Using 16 features for clustering
+[2026-03-31 18:52:19] INFO     clustering — Clusters assigned to test split. Distribution:
+cluster
+0    14950
+1     4617
+3     1038
+4       14
+5     1925
+[2026-03-31 19:00:25] INFO     baseline_model — Running baseline model on 125,973 rows...
+[2026-03-31 19:00:25] INFO     baseline_model — Cluster  0 baseline computed ( 72,414 samples, 16 features)
+[2026-03-31 19:00:25] INFO     baseline_model — Cluster  1 baseline computed ( 41,705 samples, 16 features)
+[2026-03-31 19:00:25] INFO     baseline_model — Cluster  2 baseline computed (      4 samples, 16 features)
+[2026-03-31 19:00:25] INFO     baseline_model — Cluster  3 baseline computed (  5,298 samples, 16 features)
+[2026-03-31 19:00:25] INFO     baseline_model — Cluster  4 baseline computed (  1,135 samples, 16 features)
+[2026-03-31 19:00:25] INFO     baseline_model — Cluster  5 baseline computed (  5,417 samples, 16 features)
+[2026-03-31 19:00:25] INFO     baseline_model — Computing rolling baseline for window=7...
+[2026-03-31 19:00:25] WARNING  baseline_model — Cluster 2 has only 4 samples — less than window=7, using all available
+[2026-03-31 19:00:26] INFO     baseline_model — Computing rolling baseline for window=30...
+[2026-03-31 19:00:26] WARNING  baseline_model — Cluster 2 has only 4 samples — less than window=30, using all available
+[2026-03-31 19:00:26] INFO     baseline_model — Computing rolling baseline for window=90...
+[2026-03-31 19:00:26] WARNING  baseline_model — Cluster 2 has only 4 samples — less than window=90, using all available
+[2026-03-31 19:00:26] INFO     baseline_model — Rolling baselines computed for windows: [7, 30, 90]
+[2026-03-31 19:00:26] INFO     baseline_model — Dynamic thresholds computed (k=3.0) for 6 clusters
+[2026-03-31 19:00:26] INFO     baseline_model — Baselines saved -> D:\behavioural-security-layer\data\metadata\cluster_baselines.pkl
+[2026-03-31 19:49:05] INFO     test - Unicode fix -> works
+[2026-03-31 19:57:59] INFO     load_cert - Loading logon.csv (nrows=50000)...
+[2026-03-31 19:58:00] INFO     load_cert - Logon loaded: 50,000 rows | after-hours: 6.4%
+[2026-03-31 19:58:00] INFO     load_cert - Loading device.csv (nrows=50000)...
+[2026-03-31 19:58:00] INFO     load_cert - Device loaded: 50,000 rows | connect events: 25,110
+[2026-03-31 19:58:00] INFO     load_cert - Loading file.csv (nrows=50000)...
+[2026-03-31 19:58:01] INFO     load_cert - File loaded: 50,000 rows | exfil attempts: 6,692 | executables: 629
+[2026-03-31 19:58:01] INFO     load_cert - Loading users.csv...
+[2026-03-31 19:58:01] INFO     load_cert - Users loaded: 4,000 employees | roles: ['ITAdmin', 'ProductionLineWorker', 'MechanicalEngineer', 'Manager', 'MaterialsEngineer', 'ComputerScientist', 'SystemsEngineer', 'HardwareEngineer', 'SecurityGuard', 'Technician', 'StockroomClerk', 'Scientist', 'ChiefEngineer', 'Mathematician', 'ElectricalEngineer', 'Physicist', 'TechnicalWriter', 'FieldServiceEngineer', 'Salesman', 'WebDeveloper', 'SoftwareQualityEngineer', 'Supervisor', 'TestEngineer', 'PurchasingClerk', 'AdministrativeAssistant', 'ProjectManager', 'ComputerProgrammer', 'SoftwareEngineer', 'NursePractitioner', 'Director', 'Engineer', 'SoftwareDeveloper', 'VicePresident', 'IndustrialEngineer', 'Statistician', 'Nurse', 'Economist', 'HumanResourceSpecialist', 'LabManager', 'InstructionalCoordinator', 'President', 'FinancialAnalyst', 'Attorney', 'HealthSafetyEngineer', 'AdministrativeStaff', 'Accountant']
+[2026-03-31 19:58:01] INFO     load_cert - Loading psychometric.csv...
+[2026-03-31 19:58:01] INFO     load_cert - Psychometric loaded: 4,000 employees | mean risk score: 0.496
+[2026-03-31 19:58:01] INFO     load_cert - Loading decoy_file.csv...
+[2026-03-31 19:58:28] INFO     drift_detection - Running ADWIN drift detection on 125,973 rows, 16 features (delta=0.002)...
+[2026-03-31 19:58:30] INFO     drift_detection -   duration                            drift points: 95037
+[2026-03-31 19:58:30] INFO     drift_detection -   src_bytes                           drift points: 125289
+[2026-03-31 19:58:30] INFO     drift_detection -   dst_bytes                           drift points: 125877
+[2026-03-31 19:58:31] INFO     drift_detection -   count                               drift points: 122767
+[2026-03-31 19:58:31] INFO     drift_detection -   srv_count                           drift points: 113768
+[2026-03-31 20:53:18] INFO     drift_detection - Running drift detection on 125,973 rows, 16 features (window=500, threshold=3.0std)...
+[2026-03-31 20:53:18] INFO     drift_detection -   duration                            drift points:  1,465
+[2026-03-31 20:53:18] INFO     drift_detection -   src_bytes                           drift points:    616
+[2026-03-31 20:53:18] INFO     drift_detection -   dst_bytes                           drift points:  1,404
+[2026-03-31 20:53:18] INFO     drift_detection -   count                               drift points:  2,621
+[2026-03-31 20:53:18] INFO     drift_detection -   srv_count                           drift points:  3,355
+[2026-03-31 20:53:18] INFO     drift_detection -   rerror_rate                         drift points:  1,062
+[2026-03-31 20:53:18] INFO     drift_detection -   diff_srv_rate                       drift points:  4,348
+[2026-03-31 20:53:18] INFO     drift_detection -   bytes_ratio                         drift points:    579
+[2026-03-31 20:53:18] INFO     drift_detection -   connection_rate                     drift points:  2,249
+[2026-03-31 20:53:18] INFO     drift_detection -   peer_outlier_score                  drift points:  2,313
+[2026-03-31 20:53:18] INFO     drift_detection - Drift detection complete - 12,647 rows flagged (10.04%)
+[2026-03-31 20:53:18] INFO     drift_detection - Running cluster-level drift detection (window=1000)...
+[2026-03-31 20:53:18] INFO     drift_detection -   Cluster 0 | size=72,414 | baseline=0.154 | drift windows: 0
+[2026-03-31 20:53:18] INFO     drift_detection -   Cluster 1 | size=41,705 | baseline=0.990 | drift windows: 0
+[2026-03-31 20:53:18] WARNING  drift_detection - Cluster 2: only 4 rows - skipping
+[2026-03-31 20:53:19] INFO     drift_detection -   Cluster 3 | size= 5,298 | baseline=0.404 | drift windows: 0
+[2026-03-31 20:53:19] INFO     drift_detection -   Cluster 4 | size= 1,135 | baseline=0.717 | drift windows: 0
+[2026-03-31 20:53:19] INFO     drift_detection -   Cluster 5 | size= 5,417 | baseline=0.599 | drift windows: 0
+[2026-03-31 21:24:54] INFO     load_cert - Loading logon.csv (nrows=50000)...
+[2026-03-31 21:24:54] INFO     load_cert - Logon loaded: 50,000 rows | after-hours: 6.4%
+[2026-03-31 21:24:54] INFO     load_cert - Loading device.csv (nrows=50000)...
+[2026-03-31 21:24:55] INFO     load_cert - Device loaded: 50,000 rows | connect events: 25,110
+[2026-03-31 21:24:55] INFO     load_cert - Loading file.csv (nrows=50000)...
+[2026-03-31 21:24:56] INFO     load_cert - File loaded: 50,000 rows | exfil attempts: 6,692 | executables: 629
+[2026-03-31 21:24:56] INFO     load_cert - Loading users.csv...
+[2026-03-31 21:24:56] INFO     load_cert - Users loaded: 4,000 employees | roles: ['ITAdmin', 'ProductionLineWorker', 'MechanicalEngineer', 'Manager', 'MaterialsEngineer', 'ComputerScientist', 'SystemsEngineer', 'HardwareEngineer', 'SecurityGuard', 'Technician', 'StockroomClerk', 'Scientist', 'ChiefEngineer', 'Mathematician', 'ElectricalEngineer', 'Physicist', 'TechnicalWriter', 'FieldServiceEngineer', 'Salesman', 'WebDeveloper', 'SoftwareQualityEngineer', 'Supervisor', 'TestEngineer', 'PurchasingClerk', 'AdministrativeAssistant', 'ProjectManager', 'ComputerProgrammer', 'SoftwareEngineer', 'NursePractitioner', 'Director', 'Engineer', 'SoftwareDeveloper', 'VicePresident', 'IndustrialEngineer', 'Statistician', 'Nurse', 'Economist', 'HumanResourceSpecialist', 'LabManager', 'InstructionalCoordinator', 'President', 'FinancialAnalyst', 'Attorney', 'HealthSafetyEngineer', 'AdministrativeStaff', 'Accountant']
+[2026-03-31 21:24:56] INFO     load_cert - Loading psychometric.csv...
+[2026-03-31 21:24:56] INFO     load_cert - Psychometric loaded: 4,000 employees | mean risk score: 0.496
+[2026-03-31 21:24:56] INFO     load_cert - Loading decoy_file.csv...
+[2026-03-31 21:24:56] INFO     load_cert - Decoy loaded: 31,095 guaranteed malicious events | columns: ['decoy_filename', 'pc', 'is_malicious']
+[2026-03-31 21:24:56] INFO     load_cert - Loading LDAP monthly files...
+[2026-03-31 21:24:57] INFO     load_cert - LDAP loaded: 68,923 records across 18 months
+[2026-03-31 21:24:57] INFO     load_cert - User master built: 4,000 employees, 20 columns
+[2026-03-31 21:24:57] INFO     load_cert - Saved cert_user_master.csv
+[2026-03-31 21:25:09] INFO     drift_detection - Running drift detection on 125,973 rows, 16 features (window=500, threshold=3.0std)...
+[2026-03-31 21:25:09] INFO     drift_detection -   duration                            drift points:  1,465
+[2026-03-31 21:25:09] INFO     drift_detection -   src_bytes                           drift points:    616
+[2026-03-31 21:25:09] INFO     drift_detection -   dst_bytes                           drift points:  1,404
+[2026-03-31 21:25:09] INFO     drift_detection -   count                               drift points:  2,621
+[2026-03-31 21:25:09] INFO     drift_detection -   srv_count                           drift points:  3,355
+[2026-03-31 21:25:09] INFO     drift_detection -   rerror_rate                         drift points:  1,062
+[2026-03-31 21:25:09] INFO     drift_detection -   diff_srv_rate                       drift points:  4,348
+[2026-03-31 21:25:09] INFO     drift_detection -   bytes_ratio                         drift points:    579
+[2026-03-31 21:25:09] INFO     drift_detection -   connection_rate                     drift points:  2,249
+[2026-03-31 21:25:09] INFO     drift_detection -   peer_outlier_score                  drift points:  2,313
+[2026-03-31 21:25:10] INFO     drift_detection - Drift detection complete - 12,647 rows flagged (10.04%)
+[2026-03-31 21:25:10] INFO     drift_detection - Running cluster-level drift detection (window=1000)...
+[2026-03-31 21:25:10] INFO     drift_detection -   Cluster 0 | size=72,414 | baseline=0.154 | drift windows: 0
+[2026-03-31 21:25:10] INFO     drift_detection -   Cluster 1 | size=41,705 | baseline=0.990 | drift windows: 0
+[2026-03-31 21:25:10] WARNING  drift_detection - Cluster 2: only 4 rows - skipping
+[2026-03-31 21:25:10] INFO     drift_detection -   Cluster 3 | size= 5,298 | baseline=0.404 | drift windows: 0
+[2026-03-31 21:25:10] INFO     drift_detection -   Cluster 4 | size= 1,135 | baseline=0.717 | drift windows: 0
+[2026-03-31 21:25:10] INFO     drift_detection -   Cluster 5 | size= 5,417 | baseline=0.599 | drift windows: 0
+[2026-03-31 21:27:28] INFO     drift_detection - Running drift detection on 125,973 rows, 16 features (window=500, threshold=3.0std)...
+[2026-03-31 21:27:28] INFO     drift_detection -   duration                            drift points:  1,465
+[2026-03-31 21:27:28] INFO     drift_detection -   src_bytes                           drift points:    616
+[2026-03-31 21:27:28] INFO     drift_detection -   dst_bytes                           drift points:  1,404
+[2026-03-31 21:27:28] INFO     drift_detection -   count                               drift points:  2,621
+[2026-03-31 21:27:28] INFO     drift_detection -   srv_count                           drift points:  3,355
+[2026-03-31 21:27:28] INFO     drift_detection -   rerror_rate                         drift points:  1,062
+[2026-03-31 21:27:28] INFO     drift_detection -   diff_srv_rate                       drift points:  4,348
+[2026-03-31 21:27:28] INFO     drift_detection -   bytes_ratio                         drift points:    579
+[2026-03-31 21:27:28] INFO     drift_detection -   connection_rate                     drift points:  2,249
+[2026-03-31 21:27:28] INFO     drift_detection -   peer_outlier_score                  drift points:  2,313
+[2026-03-31 21:27:28] INFO     drift_detection - Drift detection complete - 12,647 rows flagged (10.04%)
+[2026-03-31 21:27:28] INFO     context_adjuster - Baselines loaded successfully
+[2026-03-31 21:27:28] INFO     context_adjuster - Running context adjustment on 125,973 rows...
+[2026-03-31 21:29:24] INFO     context_adjuster - Context adjustment complete - 52 rows scored above 0.5 (0.0%)
+[2026-03-31 21:29:31] INFO     context_adjuster - Saved -> D:\behavioural-security-layer\data\processed\nslkdd_train_context.csv

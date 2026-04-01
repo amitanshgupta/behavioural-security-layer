@@ -7,23 +7,26 @@ LOG_DIR.mkdir(exist_ok=True)
 
 def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
-    if logger.handlers:          # avoid duplicate handlers on re-import
+    if logger.handlers:
         return logger
 
     logger.setLevel(logging.DEBUG)
 
     fmt = logging.Formatter(
-        "[%(asctime)s] %(levelname)-8s %(name)s — %(message)s",
+        "[%(asctime)s] %(levelname)-8s %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    # Console handler
-    ch = logging.StreamHandler(sys.stdout)
+    # Console handler — UTF-8 explicitly set for Windows PowerShell
+    ch = logging.StreamHandler(
+        open(sys.stdout.fileno(), mode='w', encoding='utf-8',
+             buffering=1, closefd=False)
+    )
     ch.setLevel(logging.INFO)
     ch.setFormatter(fmt)
 
     # File handler
-    fh = logging.FileHandler(LOG_DIR / "pipeline.log")
+    fh = logging.FileHandler(LOG_DIR / "pipeline.log", encoding='utf-8')
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(fmt)
 

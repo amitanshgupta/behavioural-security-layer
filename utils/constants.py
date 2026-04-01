@@ -60,3 +60,76 @@ NSLKDD_COLUMNS = [
 
 # ── Categorical columns in NSL-KDD ───────────────────────
 NSLKDD_CATEGORICAL = ["protocol_type", "service", "flag"]
+
+# ── Context Engine Config ────────────────────────────────
+N_CLUSTERS          = 8       # K-Means clusters (role groups)
+ROLLING_WINDOWS     = [7, 30, 90]   # days — for baseline profiles
+DRIFT_DELTA         = 0.002   # ADWIN sensitivity
+ANOMALY_THRESHOLD_K = 3.0     # mean ± k*std for dynamic thresholds
+
+# Features used for clustering (behaviour-rich, no label)
+CLUSTERING_FEATURES = [
+    "duration", "src_bytes", "dst_bytes",
+    "count", "srv_count",
+    "serror_rate", "rerror_rate",
+    "same_srv_rate", "diff_srv_rate",
+    "dst_host_count", "dst_host_srv_count",
+    "bytes_ratio", "connection_rate",
+    "error_rate_combined", "service_diversity_score",
+    "peer_outlier_score",
+]
+
+# ── CERT Dataset Paths ───────────────────────────────────
+CERT_LOGON_PATH       = CERT_DIR / "logon.csv"
+CERT_DEVICE_PATH      = CERT_DIR / "device.csv"
+CERT_FILE_PATH        = CERT_DIR / "file.csv"
+CERT_EMAIL_PATH       = CERT_DIR / "email.csv"
+CERT_HTTP_PATH        = CERT_DIR / "http.csv"
+CERT_USERS_PATH       = CERT_DIR / "users.csv"
+CERT_PSYCHOMETRIC_PATH= CERT_DIR / "psychometric.csv"
+CERT_DECOY_PATH       = CERT_DIR / "decoy_file.csv"
+CERT_LDAP_DIR         = CERT_DIR / "LDAP"
+
+# ── CERT Column Schemas ──────────────────────────────────
+CERT_LOGON_COLS   = ["id", "date", "user", "pc", "activity"]
+CERT_DEVICE_COLS  = ["id", "date", "user", "pc", "file_tree", "activity"]
+CERT_FILE_COLS    = ["id", "date", "user", "pc", "filename",
+                     "activity", "to_removable_media",
+                     "from_removable_media", "content"]
+CERT_USERS_COLS   = ["employee_name", "user_id", "email", "role",
+                     "projects", "business_unit", "functional_unit",
+                     "department", "team", "supervisor",
+                     "start_date", "end_date"]
+CERT_PSYCHO_COLS  = ["employee_name", "user_id", "O", "C", "E", "A", "N"]
+
+# ── CERT Role Mapping ────────────────────────────────────
+CERT_ROLE_TIER = {
+    # Executives
+    "President": 5, "VicePresident": 5, "Director": 4,
+    # IT
+    "ITAdmin": 4, "ITHelpDesk": 3, "WebDeveloper": 3,
+    "SoftwareDeveloper": 3, "SoftwareEngineer": 3,
+    "ComputerProgrammer": 3, "ComputerScientist": 3,
+    "SoftwareQualityEngineer": 2,
+    # Engineering
+    "ChiefEngineer": 4, "SystemsEngineer": 3,
+    "MechanicalEngineer": 2, "MaterialsEngineer": 2,
+    "HardwareEngineer": 2, "ElectricalEngineer": 2,
+    "IndustrialEngineer": 2, "FieldServiceEngineer": 2,
+    "TestEngineer": 2, "Engineer": 2,
+    # Management
+    "Manager": 3, "ProjectManager": 3, "LabManager": 3,
+    "Supervisor": 3,
+    # Science
+    "Scientist": 2, "Physicist": 2, "Mathematician": 2,
+    "Statistician": 2, "Economist": 2,
+    # Admin/Support
+    "AdministrativeAssistant": 1, "PurchasingClerk": 1,
+    "StockroomClerk": 1, "HumanResourceSpecialist": 1,
+    "InstructionalCoordinator": 1, "TechnicalWriter": 1,
+    # Other
+    "SecurityGuard": 1, "Technician": 2,
+    "NursePractitioner": 2, "Nurse": 1,
+    "Salesman": 1, "AccountManager": 2,
+    "ProductionLineWorker": 1, "Unknown": 0,
+}
