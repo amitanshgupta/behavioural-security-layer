@@ -680,3 +680,177 @@ weighted avg       0.75      0.70      0.69     22544
  [5689 7144]]
 [2026-04-05 11:58:59] INFO     genai_detector - Model saved -> D:\behavioural-security-layer\data\metadata\genai_detector.pkl
 [2026-04-05 11:59:00] INFO     genai_detector - Scored test set saved -> nslkdd_test_genai_scored.csv
+[2026-04-05 15:28:19] INFO     model_pipeline - Loading all model artifacts...
+[2026-04-05 15:28:22] INFO     model_pipeline - LightGBM loaded
+[2026-04-05 15:28:25] INFO     model_pipeline - Isolation Forest loaded
+[2026-04-05 15:28:26] INFO     model_pipeline - BiLSTM loaded
+[2026-04-05 15:28:26] INFO     model_pipeline - GenAI detector loaded
+[2026-04-05 15:28:26] INFO     model_pipeline - All models loaded successfully
+[2026-04-05 15:28:27] INFO     model_pipeline - Running ensemble inference on 22,544 rows...
+[2026-04-05 15:31:47] INFO     model_pipeline - Loading all model artifacts...
+[2026-04-05 15:31:47] INFO     model_pipeline - LightGBM loaded
+[2026-04-05 15:31:48] INFO     model_pipeline - Isolation Forest loaded
+[2026-04-05 15:31:48] INFO     model_pipeline - BiLSTM loaded
+[2026-04-05 15:31:48] INFO     model_pipeline - GenAI detector loaded
+[2026-04-05 15:31:48] INFO     model_pipeline - All models loaded successfully
+[2026-04-05 15:31:48] INFO     model_pipeline - Running ensemble inference on 22,544 rows...
+[2026-04-05 15:33:44] INFO     isolation_forest - Loaded train: 125,973 rows, 32 features
+[2026-04-05 15:33:44] INFO     isolation_forest - Loaded test: 22,544 rows, 32 features
+[2026-04-05 15:33:44] INFO     isolation_forest - Training Isolation Forest (n_estimators=100, contamination=0.05)...
+[2026-04-05 15:33:46] INFO     isolation_forest - Training complete
+[2026-04-05 15:33:46] INFO     isolation_forest - Evaluating on train split...
+[2026-04-05 15:33:48] INFO     isolation_forest - 
+--- Isolation Forest [train] ---
+[2026-04-05 15:33:48] INFO     isolation_forest - F1 Score : 0.1401
+[2026-04-05 15:33:48] INFO     isolation_forest - ROC-AUC  : 0.7866
+[2026-04-05 15:33:48] INFO     isolation_forest - FPR      : 0.0260 (2.6% false positive rate)
+[2026-04-05 15:33:48] INFO     isolation_forest - 
+Classification Report:
+              precision    recall  f1-score   support
+
+      normal       0.55      0.97      0.70     67343
+      attack       0.72      0.08      0.14     58630
+
+    accuracy                           0.56    125973
+   macro avg       0.63      0.53      0.42    125973
+weighted avg       0.63      0.56      0.44    125973
+
+[2026-04-05 15:33:48] INFO     isolation_forest - Confusion Matrix:
+[[65591  1752]
+ [54083  4547]]
+[2026-04-05 15:33:48] INFO     isolation_forest - Evaluating on test split...
+[2026-04-05 15:33:48] INFO     isolation_forest - 
+--- Isolation Forest [test] ---
+[2026-04-05 15:33:48] INFO     isolation_forest - F1 Score : 0.2811
+[2026-04-05 15:33:48] INFO     isolation_forest - ROC-AUC  : 0.8660
+[2026-04-05 15:33:48] INFO     isolation_forest - FPR      : 0.0262 (2.6% false positive rate)
+[2026-04-05 15:33:48] INFO     isolation_forest - 
+Classification Report:
+              precision    recall  f1-score   support
+
+      normal       0.47      0.97      0.63      9711
+      attack       0.89      0.17      0.28     12833
+
+    accuracy                           0.51     22544
+   macro avg       0.68      0.57      0.46     22544
+weighted avg       0.71      0.51      0.43     22544
+
+[2026-04-05 15:33:48] INFO     isolation_forest - Confusion Matrix:
+[[ 9457   254]
+ [10693  2140]]
+[2026-04-05 15:33:48] INFO     isolation_forest - Model saved -> D:\behavioural-security-layer\data\metadata\isolation_forest.pkl
+[2026-04-05 15:33:50] INFO     isolation_forest - Scored test set saved -> nslkdd_test_if_scored.csv
+[2026-04-05 15:34:14] INFO     model_pipeline - Loading all model artifacts...
+[2026-04-05 15:34:14] INFO     model_pipeline - LightGBM loaded
+[2026-04-05 15:34:14] INFO     model_pipeline - Isolation Forest loaded
+[2026-04-05 15:34:14] INFO     model_pipeline - BiLSTM loaded
+[2026-04-05 15:34:14] INFO     model_pipeline - GenAI detector loaded
+[2026-04-05 15:34:14] INFO     model_pipeline - All models loaded successfully
+[2026-04-05 15:34:15] INFO     model_pipeline - Running ensemble inference on 22,544 rows...
+[2026-04-05 15:36:16] INFO     model_pipeline - Loading all model artifacts...
+[2026-04-05 15:36:16] INFO     model_pipeline - LightGBM loaded
+[2026-04-05 15:36:16] INFO     model_pipeline - Isolation Forest loaded
+[2026-04-05 15:36:17] INFO     model_pipeline - BiLSTM loaded
+[2026-04-05 15:36:17] INFO     model_pipeline - GenAI detector loaded
+[2026-04-05 15:36:17] INFO     model_pipeline - All models loaded successfully
+[2026-04-05 15:36:17] INFO     model_pipeline - Running ensemble inference on 22,544 rows...
+[2026-04-05 15:37:56] INFO     isolation_forest - Loaded train: 125,973 rows, 28 features
+[2026-04-05 15:37:56] INFO     isolation_forest - Loaded test: 22,544 rows, 28 features
+[2026-04-05 15:37:56] INFO     isolation_forest - Training Isolation Forest (n_estimators=100, contamination=0.05)...
+[2026-04-05 15:37:58] INFO     isolation_forest - Training complete
+[2026-04-05 15:37:58] INFO     isolation_forest - Evaluating on train split...
+[2026-04-05 15:37:59] INFO     isolation_forest - 
+--- Isolation Forest [train] ---
+[2026-04-05 15:37:59] INFO     isolation_forest - F1 Score : 0.1446
+[2026-04-05 15:37:59] INFO     isolation_forest - ROC-AUC  : 0.7617
+[2026-04-05 15:37:59] INFO     isolation_forest - FPR      : 0.0238 (2.4% false positive rate)
+[2026-04-05 15:38:00] INFO     isolation_forest - 
+Classification Report:
+              precision    recall  f1-score   support
+
+      normal       0.55      0.98      0.70     67343
+      attack       0.75      0.08      0.14     58630
+
+    accuracy                           0.56    125973
+   macro avg       0.65      0.53      0.42    125973
+weighted avg       0.64      0.56      0.44    125973
+
+[2026-04-05 15:38:00] INFO     isolation_forest - Confusion Matrix:
+[[65739  1604]
+ [53936  4694]]
+[2026-04-05 15:38:00] INFO     isolation_forest - Evaluating on test split...
+[2026-04-05 15:38:00] INFO     isolation_forest - 
+--- Isolation Forest [test] ---
+[2026-04-05 15:38:00] INFO     isolation_forest - F1 Score : 0.2854
+[2026-04-05 15:38:00] INFO     isolation_forest - ROC-AUC  : 0.8421
+[2026-04-05 15:38:00] INFO     isolation_forest - FPR      : 0.0470 (4.7% false positive rate)
+[2026-04-05 15:38:00] INFO     isolation_forest - 
+Classification Report:
+              precision    recall  f1-score   support
+
+      normal       0.47      0.95      0.63      9711
+      attack       0.83      0.17      0.29     12833
+
+    accuracy                           0.51     22544
+   macro avg       0.65      0.56      0.46     22544
+weighted avg       0.67      0.51      0.43     22544
+
+[2026-04-05 15:38:00] INFO     isolation_forest - Confusion Matrix:
+[[ 9255   456]
+ [10621  2212]]
+[2026-04-05 15:38:00] INFO     isolation_forest - Model saved -> D:\behavioural-security-layer\data\metadata\isolation_forest.pkl
+[2026-04-05 15:38:02] INFO     isolation_forest - Scored test set saved -> nslkdd_test_if_scored.csv
+[2026-04-05 15:38:15] INFO     model_pipeline - Loading all model artifacts...
+[2026-04-05 15:38:16] INFO     model_pipeline - LightGBM loaded
+[2026-04-05 15:38:16] INFO     model_pipeline - Isolation Forest loaded
+[2026-04-05 15:38:16] INFO     model_pipeline - BiLSTM loaded
+[2026-04-05 15:38:16] INFO     model_pipeline - GenAI detector loaded
+[2026-04-05 15:38:16] INFO     model_pipeline - All models loaded successfully
+[2026-04-05 15:38:16] INFO     model_pipeline - Running ensemble inference on 22,544 rows...
+[2026-04-05 15:38:53] INFO     model_pipeline - Ensemble complete - 8,657 rows flagged as attack (38.4%)
+[2026-04-05 15:38:53] INFO     model_pipeline - 
+--- Ensemble Results ---
+[2026-04-05 15:38:53] INFO     model_pipeline - F1      : 0.7787
+[2026-04-05 15:38:53] INFO     model_pipeline - ROC-AUC : 0.9156
+[2026-04-05 15:38:53] INFO     model_pipeline - FPR     : 0.0299 (3.0%)
+[2026-04-05 15:38:53] INFO     model_pipeline - 
+              precision    recall  f1-score   support
+
+      normal       0.68      0.97      0.80      9711
+      attack       0.97      0.65      0.78     12833
+
+    accuracy                           0.79     22544
+   macro avg       0.82      0.81      0.79     22544
+weighted avg       0.84      0.79      0.79     22544
+
+[2026-04-05 15:38:53] INFO     model_pipeline - Confusion Matrix:
+[[9421  290]
+ [4466 8367]]
+[2026-04-05 15:38:54] INFO     model_pipeline - Ensemble results saved -> D:\behavioural-security-layer\data\processed\nslkdd_test_ensemble.csv
+[2026-04-05 15:41:07] INFO     model_pipeline - Loading all model artifacts...
+[2026-04-05 15:41:07] INFO     model_pipeline - LightGBM loaded
+[2026-04-05 15:41:07] INFO     model_pipeline - Isolation Forest loaded
+[2026-04-05 15:41:07] INFO     model_pipeline - BiLSTM loaded
+[2026-04-05 15:41:07] INFO     model_pipeline - GenAI detector loaded
+[2026-04-05 15:41:07] INFO     model_pipeline - All models loaded successfully
+[2026-04-05 15:41:08] INFO     model_pipeline - Running ensemble inference on 22,544 rows...
+[2026-04-05 15:41:42] INFO     model_pipeline - Ensemble complete - 8,657 rows flagged as attack (38.4%)
+[2026-04-05 15:41:42] INFO     model_pipeline - 
+--- Ensemble Results ---
+[2026-04-05 15:41:42] INFO     model_pipeline - F1      : 0.7787
+[2026-04-05 15:41:42] INFO     model_pipeline - ROC-AUC : 0.9156
+[2026-04-05 15:41:42] INFO     model_pipeline - FPR     : 0.0299 (3.0%)
+[2026-04-05 15:41:42] INFO     model_pipeline - 
+              precision    recall  f1-score   support
+
+      normal       0.68      0.97      0.80      9711
+      attack       0.97      0.65      0.78     12833
+
+    accuracy                           0.79     22544
+   macro avg       0.82      0.81      0.79     22544
+weighted avg       0.84      0.79      0.79     22544
+
+[2026-04-05 15:41:42] INFO     model_pipeline - Confusion Matrix:
+[[9421  290]
+ [4466 8367]]
+[2026-04-05 15:41:44] INFO     model_pipeline - Ensemble results saved -> D:\behavioural-security-layer\data\processed\nslkdd_test_ensemble.csv

@@ -34,14 +34,16 @@ IF_FEATURES = CLUSTERING_FEATURES + [
 
 
 def load_data(split: str) -> tuple:
-    """Load processed feature file, return X and y."""
     path = PROCESSED_DIR / f"nslkdd_{split}_features.csv"
     df   = pd.read_csv(path)
-
-    features = [f for f in IF_FEATURES if f in df.columns]
+    seen     = set()
+    features = []
+    for f in IF_FEATURES:
+        if f in df.columns and f not in seen:
+            features.append(f)
+            seen.add(f)
     X = df[features].fillna(0)
     y = df["label_binary"]
-
     log.info(f"Loaded {split}: {X.shape[0]:,} rows, {X.shape[1]} features")
     return X, y, features
 
