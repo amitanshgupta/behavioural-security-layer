@@ -467,3 +467,49 @@ cluster
 [2026-03-31 21:27:28] INFO     context_adjuster - Running context adjustment on 125,973 rows...
 [2026-03-31 21:29:24] INFO     context_adjuster - Context adjustment complete - 52 rows scored above 0.5 (0.0%)
 [2026-03-31 21:29:31] INFO     context_adjuster - Saved -> D:\behavioural-security-layer\data\processed\nslkdd_train_context.csv
+[2026-04-05 09:45:40] INFO     isolation_forest - Loaded train: 125,973 rows, 32 features
+[2026-04-05 09:45:41] INFO     isolation_forest - Loaded test: 22,544 rows, 32 features
+[2026-04-05 09:45:41] INFO     isolation_forest - Training Isolation Forest (n_estimators=100, contamination=0.05)...
+[2026-04-05 09:45:43] INFO     isolation_forest - Training complete
+[2026-04-05 09:45:43] INFO     isolation_forest - Evaluating on train split...
+[2026-04-05 09:45:45] INFO     isolation_forest - 
+--- Isolation Forest [train] ---
+[2026-04-05 09:45:45] INFO     isolation_forest - F1 Score : 0.1401
+[2026-04-05 09:45:45] INFO     isolation_forest - ROC-AUC  : 0.7866
+[2026-04-05 09:45:45] INFO     isolation_forest - FPR      : 0.0260 (2.6% false positive rate)
+[2026-04-05 09:45:45] INFO     isolation_forest - 
+Classification Report:
+              precision    recall  f1-score   support
+
+      normal       0.55      0.97      0.70     67343
+      attack       0.72      0.08      0.14     58630
+
+    accuracy                           0.56    125973
+   macro avg       0.63      0.53      0.42    125973
+weighted avg       0.63      0.56      0.44    125973
+
+[2026-04-05 09:45:45] INFO     isolation_forest - Confusion Matrix:
+[[65591  1752]
+ [54083  4547]]
+[2026-04-05 09:45:45] INFO     isolation_forest - Evaluating on test split...
+[2026-04-05 09:45:46] INFO     isolation_forest - 
+--- Isolation Forest [test] ---
+[2026-04-05 09:45:46] INFO     isolation_forest - F1 Score : 0.2811
+[2026-04-05 09:45:46] INFO     isolation_forest - ROC-AUC  : 0.8660
+[2026-04-05 09:45:46] INFO     isolation_forest - FPR      : 0.0262 (2.6% false positive rate)
+[2026-04-05 09:45:46] INFO     isolation_forest - 
+Classification Report:
+              precision    recall  f1-score   support
+
+      normal       0.47      0.97      0.63      9711
+      attack       0.89      0.17      0.28     12833
+
+    accuracy                           0.51     22544
+   macro avg       0.68      0.57      0.46     22544
+weighted avg       0.71      0.51      0.43     22544
+
+[2026-04-05 09:45:46] INFO     isolation_forest - Confusion Matrix:
+[[ 9457   254]
+ [10693  2140]]
+[2026-04-05 09:45:46] INFO     isolation_forest - Model saved -> D:\behavioural-security-layer\data\metadata\isolation_forest.pkl
+[2026-04-05 09:45:48] INFO     isolation_forest - Scored test set saved -> nslkdd_test_if_scored.csv
