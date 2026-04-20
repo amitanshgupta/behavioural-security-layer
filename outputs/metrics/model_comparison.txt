@@ -1,0 +1,13 @@
+BEHAVIORAL SECURITY LAYER — MODEL COMPARISON
+======================================================================
+
+            model     f1  precision  recall  roc_auc    fpr  accuracy
+         LightGBM 0.7893     0.9588  0.6708   0.9595 0.0381    0.7962
+  IsolationForest 0.2854     0.8291  0.1724   0.8421 0.0470    0.5086
+GenAI_OneClassSVM 0.6760     0.8605  0.5567   0.8188 0.1192    0.6963
+         Ensemble 0.7787     0.9665  0.6520   0.9156 0.0299    0.7890
+
+Proposal Targets:
+  Detection Accuracy  : > 97%
+  False Positive Rate : < 8%
+  ROC-AUC             : maximize

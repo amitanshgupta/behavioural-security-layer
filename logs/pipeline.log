@@ -1195,3 +1195,208 @@ LIME explanations complete — 5 samples explained
 [2026-04-20 15:39:26] INFO     fl_server - 
 Federated vs Centralised gap: 0.0196 (WITHIN 3% target)
 [2026-04-20 15:39:26] INFO     fl_server - FL results saved -> D:\behavioural-security-layer\data\metadata\fl_server_results.pkl
+[2026-04-20 15:41:35] INFO     metrics - 
+--- LightGBM Metrics ---
+[2026-04-20 15:41:35] INFO     metrics - F1=0.7893 | AUC=0.9595 | FPR=0.0381 | Recall=0.6708
+[2026-04-20 15:41:35] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.69      0.96      0.80      9711
+      attack       0.96      0.67      0.79     12833
+
+    accuracy                           0.80     22544
+   macro avg       0.82      0.82      0.80     22544
+weighted avg       0.84      0.80      0.80     22544
+
+[2026-04-20 15:41:35] INFO     metrics - 
+--- IsolationForest Metrics ---
+[2026-04-20 15:41:35] INFO     metrics - F1=0.2854 | AUC=0.8421 | FPR=0.0470 | Recall=0.1724
+[2026-04-20 15:41:35] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.47      0.95      0.63      9711
+      attack       0.83      0.17      0.29     12833
+
+    accuracy                           0.51     22544
+   macro avg       0.65      0.56      0.46     22544
+weighted avg       0.67      0.51      0.43     22544
+
+[2026-04-20 15:41:36] INFO     metrics - 
+--- GenAI_OneClassSVM Metrics ---
+[2026-04-20 15:41:36] INFO     metrics - F1=0.6760 | AUC=0.8188 | FPR=0.1192 | Recall=0.5567
+[2026-04-20 15:41:36] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.60      0.88      0.71      9711
+      attack       0.86      0.56      0.68     12833
+
+    accuracy                           0.70     22544
+   macro avg       0.73      0.72      0.70     22544
+weighted avg       0.75      0.70      0.69     22544
+
+[2026-04-20 15:41:36] INFO     metrics - 
+--- Ensemble Metrics ---
+[2026-04-20 15:41:36] INFO     metrics - F1=0.7787 | AUC=0.9156 | FPR=0.0299 | Recall=0.6520
+[2026-04-20 15:41:36] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.68      0.97      0.80      9711
+      attack       0.97      0.65      0.78     12833
+
+    accuracy                           0.79     22544
+   macro avg       0.82      0.81      0.79     22544
+weighted avg       0.84      0.79      0.79     22544
+
+[2026-04-20 15:41:36] INFO     metrics - Metrics saved -> D:\behavioural-security-layer\outputs\metrics\model_comparison.csv
+[2026-04-20 15:41:36] INFO     metrics - Text report saved -> D:\behavioural-security-layer\outputs\metrics\model_comparison.txt
+[2026-04-20 15:42:48] INFO     experiments - Running threshold sweep for LightGBM...
+[2026-04-20 15:42:48] INFO     experiments - Optimal threshold: 0.1 (F1=0.8363, FPR=0.0469)
+[2026-04-20 15:42:48] INFO     experiments - Threshold sweep saved -> D:\behavioural-security-layer\outputs\metrics\threshold_sweep_lightgbm.csv
+[2026-04-20 15:42:48] INFO     experiments - Running DP noise sensitivity experiment...
+[2026-04-20 15:42:50] INFO     experiments -   noise=0.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:42:52] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:42:52] DEBUG    dp_mechanism - DP noise added: sigma=0.5000, original_norm=705.8286
+[2026-04-20 15:42:52] INFO     experiments -   noise=0.5 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:42:53] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:42:53] DEBUG    dp_mechanism - DP noise added: sigma=1.0000, original_norm=705.8286
+[2026-04-20 15:42:53] INFO     experiments -   noise=1.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:42:55] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:42:55] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=705.8286
+[2026-04-20 15:42:55] INFO     experiments -   noise=1.1 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:42:57] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:42:57] DEBUG    dp_mechanism - DP noise added: sigma=2.0000, original_norm=705.8286
+[2026-04-20 15:42:57] INFO     experiments -   noise=2.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:42:58] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:42:58] DEBUG    dp_mechanism - DP noise added: sigma=3.0000, original_norm=705.8286
+[2026-04-20 15:42:58] INFO     experiments -   noise=3.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:42:58] INFO     experiments - Noise sensitivity saved -> D:\behavioural-security-layer\outputs\metrics\noise_sensitivity.csv
+[2026-04-20 15:42:58] INFO     experiments - 
+--- Federated vs Centralised ---
+[2026-04-20 15:42:58] INFO     experiments -   centralised_f1            : 0.7893
+[2026-04-20 15:42:58] INFO     experiments -   federated_f1              : 0.8089
+[2026-04-20 15:42:58] INFO     experiments -   gap                       : 0.0196
+[2026-04-20 15:42:58] INFO     experiments -   within_3pct               : True
+[2026-04-20 15:42:58] INFO     experiments -   epsilon_spent             : 0.118675
+[2026-04-20 15:42:58] INFO     experiments -   epsilon_budget            : 0.5
+[2026-04-20 15:42:58] INFO     experiments -   rounds_to_converge        : 2
+[2026-04-20 15:42:58] INFO     experiments - Saved -> D:\behavioural-security-layer\outputs\metrics\federated_vs_central.csv
+[2026-04-20 15:46:26] INFO     ablation - Running ablation study...
+[2026-04-20 15:46:26] INFO     ablation - Configuration                                     F1     AUC     FPR
+[2026-04-20 15:46:26] INFO     ablation - ----------------------------------------------------------------------
+[2026-04-20 15:46:27] INFO     ablation -   1. Baseline (raw features only)               F1=0.7645 AUC=0.9459 FPR=0.0265
+[2026-04-20 15:46:29] INFO     ablation -   2. + Peer features (NC1)                      F1=0.8055 AUC=0.9445 FPR=0.0446
+[2026-04-20 15:46:31] INFO     ablation -   3. + Auth features                            F1=0.8092 AUC=0.9559 FPR=0.0454
+[2026-04-20 15:46:32] INFO     ablation -   4. + Session features                         F1=0.7974 AUC=0.9498 FPR=0.0452
+[2026-04-20 15:46:34] INFO     ablation -   5. + Network engineered features              F1=0.7967 AUC=0.9518 FPR=0.0416
+[2026-04-20 15:46:35] INFO     ablation -   6. Full model (all features)                  F1=0.8215 AUC=0.9515 FPR=0.0432
+[2026-04-20 15:46:37] INFO     ablation -   7. Baseline + GenAI features only (NC4)       F1=0.7817 AUC=0.9536 FPR=0.0263
+[2026-04-20 15:46:38] INFO     ablation -   8. Full - Peer features (NC1 impact)          F1=0.7937 AUC=0.9668 FPR=0.0272
+[2026-04-20 15:46:40] INFO     ablation -   9. Full - GenAI features (NC4 impact)         F1=0.8036 AUC=0.9517 FPR=0.0428
+[2026-04-20 15:46:40] INFO     ablation - 
+Ablation study saved -> D:\behavioural-security-layer\outputs\metrics\ablation_study.csv
+[2026-04-20 15:47:51] INFO     main - Running Phase 6 only
+[2026-04-20 15:47:51] INFO     main - ============================================================
+[2026-04-20 15:47:51] INFO     main - PHASE 6 — Evaluation
+[2026-04-20 15:47:51] INFO     main - ============================================================
+[2026-04-20 15:47:55] INFO     metrics - 
+--- LightGBM Metrics ---
+[2026-04-20 15:47:55] INFO     metrics - F1=0.7893 | AUC=0.9595 | FPR=0.0381 | Recall=0.6708
+[2026-04-20 15:47:55] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.69      0.96      0.80      9711
+      attack       0.96      0.67      0.79     12833
+
+    accuracy                           0.80     22544
+   macro avg       0.82      0.82      0.80     22544
+weighted avg       0.84      0.80      0.80     22544
+
+[2026-04-20 15:47:55] INFO     metrics - 
+--- IsolationForest Metrics ---
+[2026-04-20 15:47:55] INFO     metrics - F1=0.2854 | AUC=0.8421 | FPR=0.0470 | Recall=0.1724
+[2026-04-20 15:47:56] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.47      0.95      0.63      9711
+      attack       0.83      0.17      0.29     12833
+
+    accuracy                           0.51     22544
+   macro avg       0.65      0.56      0.46     22544
+weighted avg       0.67      0.51      0.43     22544
+
+[2026-04-20 15:47:56] INFO     metrics - 
+--- GenAI_OneClassSVM Metrics ---
+[2026-04-20 15:47:56] INFO     metrics - F1=0.6760 | AUC=0.8188 | FPR=0.1192 | Recall=0.5567
+[2026-04-20 15:47:56] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.60      0.88      0.71      9711
+      attack       0.86      0.56      0.68     12833
+
+    accuracy                           0.70     22544
+   macro avg       0.73      0.72      0.70     22544
+weighted avg       0.75      0.70      0.69     22544
+
+[2026-04-20 15:47:57] INFO     metrics - 
+--- Ensemble Metrics ---
+[2026-04-20 15:47:57] INFO     metrics - F1=0.7787 | AUC=0.9156 | FPR=0.0299 | Recall=0.6520
+[2026-04-20 15:47:57] INFO     metrics - 
+              precision    recall  f1-score   support
+
+      normal       0.68      0.97      0.80      9711
+      attack       0.97      0.65      0.78     12833
+
+    accuracy                           0.79     22544
+   macro avg       0.82      0.81      0.79     22544
+weighted avg       0.84      0.79      0.79     22544
+
+[2026-04-20 15:47:57] INFO     metrics - Metrics saved -> D:\behavioural-security-layer\outputs\metrics\model_comparison.csv
+[2026-04-20 15:47:57] INFO     metrics - Text report saved -> D:\behavioural-security-layer\outputs\metrics\model_comparison.txt
+[2026-04-20 15:47:59] INFO     experiments - Running threshold sweep for LightGBM...
+[2026-04-20 15:48:00] INFO     experiments - Optimal threshold: 0.1 (F1=0.8363, FPR=0.0469)
+[2026-04-20 15:48:00] INFO     experiments - Threshold sweep saved -> D:\behavioural-security-layer\outputs\metrics\threshold_sweep_lightgbm.csv
+[2026-04-20 15:48:00] INFO     experiments - Running DP noise sensitivity experiment...
+[2026-04-20 15:48:02] INFO     experiments -   noise=0.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:48:04] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:48:04] DEBUG    dp_mechanism - DP noise added: sigma=0.5000, original_norm=705.8286
+[2026-04-20 15:48:04] INFO     experiments -   noise=0.5 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:48:06] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:48:06] DEBUG    dp_mechanism - DP noise added: sigma=1.0000, original_norm=705.8286
+[2026-04-20 15:48:06] INFO     experiments -   noise=1.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:48:08] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:48:08] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=705.8286
+[2026-04-20 15:48:08] INFO     experiments -   noise=1.1 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:48:09] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:48:09] DEBUG    dp_mechanism - DP noise added: sigma=2.0000, original_norm=705.8286
+[2026-04-20 15:48:09] INFO     experiments -   noise=2.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:48:11] DEBUG    dp_mechanism - Weights clipped: norm=705.8286 -> 1.0000
+[2026-04-20 15:48:11] DEBUG    dp_mechanism - DP noise added: sigma=3.0000, original_norm=705.8286
+[2026-04-20 15:48:11] INFO     experiments -   noise=3.0 | F1=0.8215 | FPR=0.0432
+[2026-04-20 15:48:11] INFO     experiments - Noise sensitivity saved -> D:\behavioural-security-layer\outputs\metrics\noise_sensitivity.csv
+[2026-04-20 15:48:11] INFO     experiments - 
+--- Federated vs Centralised ---
+[2026-04-20 15:48:11] INFO     experiments -   centralised_f1            : 0.7893
+[2026-04-20 15:48:11] INFO     experiments -   federated_f1              : 0.8089
+[2026-04-20 15:48:11] INFO     experiments -   gap                       : 0.0196
+[2026-04-20 15:48:11] INFO     experiments -   within_3pct               : True
+[2026-04-20 15:48:11] INFO     experiments -   epsilon_spent             : 0.118675
+[2026-04-20 15:48:11] INFO     experiments -   epsilon_budget            : 0.5
+[2026-04-20 15:48:11] INFO     experiments -   rounds_to_converge        : 2
+[2026-04-20 15:48:11] INFO     experiments - Saved -> D:\behavioural-security-layer\outputs\metrics\federated_vs_central.csv
+[2026-04-20 15:48:14] INFO     ablation - Running ablation study...
+[2026-04-20 15:48:14] INFO     ablation - Configuration                                     F1     AUC     FPR
+[2026-04-20 15:48:14] INFO     ablation - ----------------------------------------------------------------------
+[2026-04-20 15:48:15] INFO     ablation -   1. Baseline (raw features only)               F1=0.7645 AUC=0.9459 FPR=0.0265
+[2026-04-20 15:48:17] INFO     ablation -   2. + Peer features (NC1)                      F1=0.8055 AUC=0.9445 FPR=0.0446
+[2026-04-20 15:48:18] INFO     ablation -   3. + Auth features                            F1=0.8092 AUC=0.9559 FPR=0.0454
+[2026-04-20 15:48:20] INFO     ablation -   4. + Session features                         F1=0.7974 AUC=0.9498 FPR=0.0452
+[2026-04-20 15:48:21] INFO     ablation -   5. + Network engineered features              F1=0.7967 AUC=0.9518 FPR=0.0416
+[2026-04-20 15:48:23] INFO     ablation -   6. Full model (all features)                  F1=0.8215 AUC=0.9515 FPR=0.0432
+[2026-04-20 15:48:24] INFO     ablation -   7. Baseline + GenAI features only (NC4)       F1=0.7817 AUC=0.9536 FPR=0.0263
+[2026-04-20 15:48:25] INFO     ablation -   8. Full - Peer features (NC1 impact)          F1=0.7937 AUC=0.9668 FPR=0.0272
+[2026-04-20 15:48:27] INFO     ablation -   9. Full - GenAI features (NC4 impact)         F1=0.8036 AUC=0.9517 FPR=0.0428
+[2026-04-20 15:48:27] INFO     ablation - 
+Ablation study saved -> D:\behavioural-security-layer\outputs\metrics\ablation_study.csv
+[2026-04-20 15:48:27] INFO     main - Phase 6 complete
+[2026-04-20 15:48:27] INFO     main - 
+Pipeline finished.
