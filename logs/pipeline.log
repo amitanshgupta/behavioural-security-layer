@@ -1103,3 +1103,95 @@ LIME explanations complete — 5 samples explained
 [2026-04-20 15:36:30] INFO     fl_client - Node 4 local F1=0.9979 on 25,194 samples
 [2026-04-20 15:36:30] INFO     fl_aggregator - FedAvg (weighted) across 5 nodes (125,973 total samples)
 [2026-04-20 15:36:30] INFO     fl_aggregator - Aggregation stats - mean_F1=0.9975 weight_variance=0.909524 weight_drift=6.0718
+[2026-04-20 15:39:20] INFO     fl_server - Starting federated training: 10 rounds, 5 nodes, DP=ON
+[2026-04-20 15:39:20] INFO     fl_server - 
+--- FL Round 1/10 ---
+[2026-04-20 15:39:21] INFO     fl_client - Node 0 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:39:21] INFO     fl_client - Node 1 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:39:21] INFO     fl_client - Node 2 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:39:21] INFO     fl_client - Node 3 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 15:39:21] INFO     fl_client - Node 4 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 15:39:21] INFO     fl_client - Node 0 loaded shard: 25,195 rows
+[2026-04-20 15:39:21] INFO     fl_client - Node 0 starting local training...
+[2026-04-20 15:39:21] DEBUG    dp_mechanism - Weights clipped: norm=717.7792 -> 1.0000
+[2026-04-20 15:39:21] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=717.7792
+[2026-04-20 15:39:21] INFO     fl_client - Node 0 DP noise applied
+[2026-04-20 15:39:21] INFO     fl_client - Node 0 local F1=0.9977 on 25,195 samples
+[2026-04-20 15:39:21] INFO     fl_client - Node 1 loaded shard: 25,195 rows
+[2026-04-20 15:39:21] INFO     fl_client - Node 1 starting local training...
+[2026-04-20 15:39:22] DEBUG    dp_mechanism - Weights clipped: norm=743.0478 -> 1.0000
+[2026-04-20 15:39:22] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=743.0478
+[2026-04-20 15:39:22] INFO     fl_client - Node 1 DP noise applied
+[2026-04-20 15:39:22] INFO     fl_client - Node 1 local F1=0.9978 on 25,195 samples
+[2026-04-20 15:39:22] INFO     fl_client - Node 2 loaded shard: 25,195 rows
+[2026-04-20 15:39:22] INFO     fl_client - Node 2 starting local training...
+[2026-04-20 15:39:22] DEBUG    dp_mechanism - Weights clipped: norm=720.5810 -> 1.0000
+[2026-04-20 15:39:22] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=720.5810
+[2026-04-20 15:39:22] INFO     fl_client - Node 2 DP noise applied
+[2026-04-20 15:39:22] INFO     fl_client - Node 2 local F1=0.9964 on 25,195 samples
+[2026-04-20 15:39:22] INFO     fl_client - Node 3 loaded shard: 25,194 rows
+[2026-04-20 15:39:22] INFO     fl_client - Node 3 starting local training...
+[2026-04-20 15:39:23] DEBUG    dp_mechanism - Weights clipped: norm=737.4375 -> 1.0000
+[2026-04-20 15:39:23] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=737.4375
+[2026-04-20 15:39:23] INFO     fl_client - Node 3 DP noise applied
+[2026-04-20 15:39:23] INFO     fl_client - Node 3 local F1=0.9976 on 25,194 samples
+[2026-04-20 15:39:23] INFO     fl_client - Node 4 loaded shard: 25,194 rows
+[2026-04-20 15:39:23] INFO     fl_client - Node 4 starting local training...
+[2026-04-20 15:39:23] DEBUG    dp_mechanism - Weights clipped: norm=675.9453 -> 1.0000
+[2026-04-20 15:39:23] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=675.9453
+[2026-04-20 15:39:23] INFO     fl_client - Node 4 DP noise applied
+[2026-04-20 15:39:23] INFO     fl_client - Node 4 local F1=0.9979 on 25,194 samples
+[2026-04-20 15:39:23] INFO     fl_aggregator - FedAvg (weighted) across 5 nodes (125,973 total samples)
+[2026-04-20 15:39:23] INFO     fl_aggregator - Aggregation stats - mean_F1=0.9975 weight_variance=0.909524 weight_drift=6.0718
+[2026-04-20 15:39:23] INFO     fl_server - 
+--- FL Round 2/10 ---
+[2026-04-20 15:39:23] INFO     fl_client - Node 0 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:39:23] INFO     fl_client - Node 1 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:39:23] INFO     fl_client - Node 2 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:39:23] INFO     fl_client - Node 3 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 15:39:23] INFO     fl_client - Node 4 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 15:39:23] INFO     fl_client - Node 0 loaded shard: 25,195 rows
+[2026-04-20 15:39:23] INFO     fl_client - Node 0 starting local training...
+[2026-04-20 15:39:24] DEBUG    dp_mechanism - Weights clipped: norm=717.7792 -> 1.0000
+[2026-04-20 15:39:24] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=717.7792
+[2026-04-20 15:39:24] INFO     fl_client - Node 0 DP noise applied
+[2026-04-20 15:39:24] INFO     fl_client - Node 0 local F1=0.9977 on 25,195 samples
+[2026-04-20 15:39:24] INFO     fl_client - Node 1 loaded shard: 25,195 rows
+[2026-04-20 15:39:24] INFO     fl_client - Node 1 starting local training...
+[2026-04-20 15:39:24] DEBUG    dp_mechanism - Weights clipped: norm=743.0478 -> 1.0000
+[2026-04-20 15:39:24] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=743.0478
+[2026-04-20 15:39:24] INFO     fl_client - Node 1 DP noise applied
+[2026-04-20 15:39:24] INFO     fl_client - Node 1 local F1=0.9978 on 25,195 samples
+[2026-04-20 15:39:24] INFO     fl_client - Node 2 loaded shard: 25,195 rows
+[2026-04-20 15:39:24] INFO     fl_client - Node 2 starting local training...
+[2026-04-20 15:39:25] DEBUG    dp_mechanism - Weights clipped: norm=720.5810 -> 1.0000
+[2026-04-20 15:39:25] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=720.5810
+[2026-04-20 15:39:25] INFO     fl_client - Node 2 DP noise applied
+[2026-04-20 15:39:25] INFO     fl_client - Node 2 local F1=0.9964 on 25,195 samples
+[2026-04-20 15:39:25] INFO     fl_client - Node 3 loaded shard: 25,194 rows
+[2026-04-20 15:39:25] INFO     fl_client - Node 3 starting local training...
+[2026-04-20 15:39:25] DEBUG    dp_mechanism - Weights clipped: norm=737.4375 -> 1.0000
+[2026-04-20 15:39:25] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=737.4375
+[2026-04-20 15:39:25] INFO     fl_client - Node 3 DP noise applied
+[2026-04-20 15:39:25] INFO     fl_client - Node 3 local F1=0.9976 on 25,194 samples
+[2026-04-20 15:39:25] INFO     fl_client - Node 4 loaded shard: 25,194 rows
+[2026-04-20 15:39:25] INFO     fl_client - Node 4 starting local training...
+[2026-04-20 15:39:25] DEBUG    dp_mechanism - Weights clipped: norm=675.9453 -> 1.0000
+[2026-04-20 15:39:25] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=675.9453
+[2026-04-20 15:39:25] INFO     fl_client - Node 4 DP noise applied
+[2026-04-20 15:39:25] INFO     fl_client - Node 4 local F1=0.9979 on 25,194 samples
+[2026-04-20 15:39:26] INFO     fl_aggregator - FedAvg (weighted) across 5 nodes (125,973 total samples)
+[2026-04-20 15:39:26] INFO     fl_aggregator - Aggregation stats - mean_F1=0.9975 weight_variance=0.909524 weight_drift=6.0718
+[2026-04-20 15:39:26] INFO     fl_aggregator - Convergence check - variance_change=0.000000 (CONVERGED)
+[2026-04-20 15:39:26] INFO     fl_server - Converged at round 2 — stopping early
+[2026-04-20 15:39:26] INFO     dp_mechanism - Privacy budget after 2 rounds: epsilon=0.1187 (WITHIN BUDGET)
+[2026-04-20 15:39:26] INFO     fl_server - Node 0 test F1=0.8000
+[2026-04-20 15:39:26] INFO     fl_server - Node 1 test F1=0.8308
+[2026-04-20 15:39:26] INFO     fl_server - Node 2 test F1=0.8155
+[2026-04-20 15:39:26] INFO     fl_server - Node 3 test F1=0.7997
+[2026-04-20 15:39:26] INFO     fl_server - Node 4 test F1=0.7983
+[2026-04-20 15:39:26] INFO     fl_server - Mean federated test F1: 0.8089
+[2026-04-20 15:39:26] INFO     fl_server - Centralised model test F1: 0.7893
+[2026-04-20 15:39:26] INFO     fl_server - 
+Federated vs Centralised gap: 0.0196 (WITHIN 3% target)
+[2026-04-20 15:39:26] INFO     fl_server - FL results saved -> D:\behavioural-security-layer\data\metadata\fl_server_results.pkl
