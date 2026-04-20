@@ -854,3 +854,252 @@ weighted avg       0.84      0.79      0.79     22544
 [[9421  290]
  [4466 8367]]
 [2026-04-05 15:41:44] INFO     model_pipeline - Ensemble results saved -> D:\behavioural-security-layer\data\processed\nslkdd_test_ensemble.csv
+[2026-04-19 23:48:50] INFO     shap_explainer - LightGBM loaded — 34 features
+[2026-04-19 23:48:51] INFO     shap_explainer - Sampled 2,000 rows for SHAP computation
+[2026-04-19 23:48:51] INFO     shap_explainer - Initialising SHAP TreeExplainer...
+[2026-04-19 23:48:52] INFO     shap_explainer - Computing SHAP values (this may take 1-2 minutes)...
+[2026-04-19 23:48:53] INFO     shap_explainer - SHAP values computed — shape: (2000, 34)
+[2026-04-19 23:48:53] INFO     shap_explainer - 
+Top 20 features by mean |SHAP|:
+[2026-04-19 23:48:53] INFO     shap_explainer -   src_bytes                                2.8508
+[2026-04-19 23:48:53] INFO     shap_explainer -   dst_host_suspicion_score                 2.1773
+[2026-04-19 23:48:53] INFO     shap_explainer -   dst_host_srv_count                       1.8272
+[2026-04-19 23:48:53] INFO     shap_explainer -   dst_bytes                                0.9848
+[2026-04-19 23:48:53] INFO     shap_explainer -   src_bytes_peer_zscore                    0.4386
+[2026-04-19 23:48:53] INFO     shap_explainer -   connection_rate                          0.3204
+[2026-04-19 23:48:53] INFO     shap_explainer -   count_peer_zscore                        0.2965
+[2026-04-19 23:48:53] INFO     shap_explainer -   bytes_above_peer_mean                    0.2939
+[2026-04-19 23:48:53] INFO     shap_explainer -   bytes_ratio                              0.2776
+[2026-04-19 23:48:53] INFO     shap_explainer -   data_exfil_proxy                         0.2702
+[2026-04-19 23:48:53] INFO     shap_explainer -   duration_peer_zscore                     0.2017
+[2026-04-19 23:48:53] INFO     shap_explainer -   api_call_pattern_score                   0.1610
+[2026-04-19 23:48:53] INFO     shap_explainer -   error_rate_combined                      0.1578
+[2026-04-19 23:48:53] INFO     shap_explainer -   dst_bytes_peer_zscore                    0.1132
+[2026-04-19 23:48:53] INFO     shap_explainer -   genai_composite_score                    0.1004
+[2026-04-19 23:48:53] INFO     shap_explainer -   peer_outlier_score                       0.1000
+[2026-04-19 23:48:53] INFO     shap_explainer -   same_service_ratio_delta                 0.0849
+[2026-04-19 23:48:53] INFO     shap_explainer -   service_diversity_score                  0.0844
+[2026-04-19 23:48:53] INFO     shap_explainer -   anomalous_login_flag                     0.0779
+[2026-04-19 23:48:53] INFO     shap_explainer -   rerror_rate                              0.0729
+[2026-04-19 23:48:53] INFO     shap_explainer - SHAP importance saved -> shap_importance.csv
+[2026-04-19 23:48:56] INFO     shap_explainer - Summary plot saved -> D:\behavioural-security-layer\outputs\shap_plots\shap_summary.png
+[2026-04-19 23:48:57] INFO     shap_explainer - Bar plot saved -> D:\behavioural-security-layer\outputs\shap_plots\shap_bar.png
+[2026-04-19 23:48:59] INFO     shap_explainer - Waterfall plot saved -> D:\behavioural-security-layer\outputs\shap_plots\shap_waterfall_row0.png
+[2026-04-19 23:49:00] INFO     shap_explainer - Waterfall plot saved -> D:\behavioural-security-layer\outputs\shap_plots\shap_waterfall_row1.png
+[2026-04-19 23:49:02] INFO     shap_explainer - Waterfall plot saved -> D:\behavioural-security-layer\outputs\shap_plots\shap_waterfall_row2.png
+[2026-04-19 23:49:02] INFO     shap_explainer - 
+Sample individual explanations:
+[2026-04-19 23:49:02] INFO     shap_explainer - 
+Row 0 | score=0.000
+[2026-04-19 23:49:02] INFO     shap_explainer -   src_bytes=914.000 (SHAP: -3.270, decreases risk) | dst_host_suspicion_score=0.021 (SHAP: -2.067, decreases risk) | dst_bytes=329.000 (SHAP: -1.468, decreases risk)
+[2026-04-19 23:49:02] INFO     shap_explainer - 
+Row 1 | score=1.000
+[2026-04-19 23:49:02] INFO     shap_explainer -   dst_host_suspicion_score=0.371 (SHAP: +3.363, increases risk) | src_bytes=0.000 (SHAP: +3.341, increases risk) | dst_host_srv_count=2.000 (SHAP: +1.828, increases risk)
+[2026-04-19 23:49:02] INFO     shap_explainer - 
+Row 2 | score=0.000
+[2026-04-19 23:49:02] INFO     shap_explainer -   src_bytes=1012.000 (SHAP: -3.189, decreases risk) | dst_host_suspicion_score=0.012 (SHAP: -1.767, decreases risk) | dst_bytes=338.000 (SHAP: -1.478, decreases risk)
+[2026-04-19 23:49:02] INFO     shap_explainer - 
+Row 3 | score=0.000
+[2026-04-19 23:49:02] INFO     shap_explainer -   src_bytes=243.000 (SHAP: -2.893, decreases risk) | dst_host_srv_count=255.000 (SHAP: -2.340, decreases risk) | dst_host_suspicion_score=0.000 (SHAP: -2.195, decreases risk)
+[2026-04-19 23:49:02] INFO     shap_explainer - 
+Row 4 | score=0.000
+[2026-04-19 23:49:02] INFO     shap_explainer -   src_bytes=227.000 (SHAP: -2.824, decreases risk) | dst_host_srv_count=255.000 (SHAP: -2.305, decreases risk) | dst_host_suspicion_score=0.000 (SHAP: -1.904, decreases risk)
+[2026-04-20 00:37:13] INFO     lime_explainer - LightGBM loaded — 34 features
+[2026-04-20 00:37:15] INFO     lime_explainer - Using 34 features | explaining 5 test samples
+[2026-04-20 00:37:15] INFO     lime_explainer - Building LIME TabularExplainer...
+[2026-04-20 00:37:16] INFO     lime_explainer - LIME explainer ready
+[2026-04-20 00:37:16] INFO     lime_explainer - 
+Explaining row 0 (true label: attack)...
+[2026-04-20 00:37:17] INFO     lime_explainer -   Prediction probability: 1.000
+[2026-04-20 00:37:17] INFO     lime_explainer -   Alert: Risk score: 1.000 | src_bytes_peer_zscore <= -0.01 (LIME: +0.159, increases risk) | dst_host_srv_count <= 10.00 (LIME: +0.153, increases risk) | src_bytes <= 0.00 (LIME: +0.151, increases risk)
+[2026-04-20 00:37:17] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row0.png
+[2026-04-20 00:37:17] INFO     lime_explainer - 
+Explaining row 1 (true label: attack)...
+[2026-04-20 00:37:17] INFO     lime_explainer -   Prediction probability: 1.000
+[2026-04-20 00:37:17] INFO     lime_explainer -   Alert: Risk score: 1.000 | src_bytes_peer_zscore <= -0.01 (LIME: +0.179, increases risk) | src_bytes <= 0.00 (LIME: +0.167, increases risk) | anomalous_login_flag <= 0.00 (LIME: -0.135, decreases risk)
+[2026-04-20 00:37:18] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row1.png
+[2026-04-20 00:37:18] INFO     lime_explainer - 
+Explaining row 3 (true label: attack)...
+[2026-04-20 00:38:29] INFO     lime_explainer - LightGBM loaded — 34 features
+[2026-04-20 00:38:31] INFO     lime_explainer - Using 34 features | explaining 5 test samples
+[2026-04-20 00:38:31] INFO     lime_explainer - Building LIME TabularExplainer...
+[2026-04-20 00:38:32] INFO     lime_explainer - LIME explainer ready
+[2026-04-20 00:38:32] INFO     lime_explainer - 
+Explaining row 0 (true label: attack)...
+[2026-04-20 00:39:30] INFO     lime_explainer - LightGBM loaded — 34 features
+[2026-04-20 00:39:32] INFO     lime_explainer - Using 34 features | explaining 5 test samples
+[2026-04-20 00:39:32] INFO     lime_explainer - Building LIME TabularExplainer...
+[2026-04-20 00:39:33] INFO     lime_explainer - LIME explainer ready
+[2026-04-20 00:39:33] INFO     lime_explainer - 
+Explaining row 0 (true label: attack)...
+[2026-04-20 00:39:33] INFO     lime_explainer -   Prediction probability: 1.000
+[2026-04-20 00:39:33] INFO     lime_explainer -   Alert: Risk score: 1.000 | src_bytes_peer_zscore <= -0.01 (LIME: +0.159, increases risk) | dst_host_srv_count <= 10.00 (LIME: +0.153, increases risk) | src_bytes <= 0.00 (LIME: +0.151, increases risk)
+[2026-04-20 00:39:33] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row0.png
+[2026-04-20 00:39:33] INFO     lime_explainer - 
+Explaining row 1 (true label: attack)...
+[2026-04-20 00:39:33] INFO     lime_explainer -   Prediction probability: 1.000
+[2026-04-20 00:39:33] INFO     lime_explainer -   Alert: Risk score: 1.000 | src_bytes_peer_zscore <= -0.01 (LIME: +0.179, increases risk) | src_bytes <= 0.00 (LIME: +0.167, increases risk) | anomalous_login_flag <= 0.00 (LIME: -0.135, decreases risk)
+[2026-04-20 00:39:34] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row1.png
+[2026-04-20 00:39:34] INFO     lime_explainer - 
+Explaining row 3 (true label: attack)...
+[2026-04-20 00:39:34] INFO     lime_explainer -   Prediction probability: 0.041
+[2026-04-20 00:39:34] INFO     lime_explainer -   Alert: Risk score: 0.041 | src_bytes_peer_zscore <= -0.01 (LIME: -0.163, decreases risk) | anomalous_login_flag <= 0.00 (LIME: -0.113, decreases risk) | dst_host_suspicion_score <= 0.00 (LIME: +0.105, increases risk)
+[2026-04-20 00:40:25] INFO     lime_explainer - LightGBM loaded — 34 features
+[2026-04-20 00:40:27] INFO     lime_explainer - Using 34 features | explaining 5 test samples
+[2026-04-20 00:40:27] INFO     lime_explainer - Building LIME TabularExplainer...
+[2026-04-20 00:40:28] INFO     lime_explainer - LIME explainer ready
+[2026-04-20 00:40:28] INFO     lime_explainer - 
+Explaining row 0 (true label: attack)...
+[2026-04-20 00:40:28] INFO     lime_explainer -   Prediction probability: 1.000
+[2026-04-20 00:40:28] INFO     lime_explainer -   Alert: Risk score: 1.000 | src_bytes_peer_zscore <= -0.01 (LIME: +0.159, increases risk) | dst_host_srv_count <= 10.00 (LIME: +0.153, increases risk) | src_bytes <= 0.00 (LIME: +0.151, increases risk)
+[2026-04-20 00:40:29] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row0.png
+[2026-04-20 00:40:29] INFO     lime_explainer - 
+Explaining row 1 (true label: attack)...
+[2026-04-20 00:40:29] INFO     lime_explainer -   Prediction probability: 1.000
+[2026-04-20 00:40:29] INFO     lime_explainer -   Alert: Risk score: 1.000 | src_bytes_peer_zscore <= -0.01 (LIME: +0.179, increases risk) | src_bytes <= 0.00 (LIME: +0.167, increases risk) | anomalous_login_flag <= 0.00 (LIME: -0.135, decreases risk)
+[2026-04-20 00:40:29] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row1.png
+[2026-04-20 00:40:29] INFO     lime_explainer - 
+Explaining row 3 (true label: attack)...
+[2026-04-20 00:40:29] INFO     lime_explainer -   Prediction probability: 0.041
+[2026-04-20 00:40:29] INFO     lime_explainer -   Alert: Risk score: 0.041 | src_bytes_peer_zscore <= -0.01 (LIME: -0.163, decreases risk) | anomalous_login_flag <= 0.00 (LIME: -0.113, decreases risk) | dst_host_suspicion_score <= 0.00 (LIME: +0.105, increases risk)
+[2026-04-20 00:40:30] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row3.png
+[2026-04-20 00:40:30] INFO     lime_explainer - 
+Explaining row 2 (true label: normal)...
+[2026-04-20 00:40:30] INFO     lime_explainer -   Prediction probability: 0.003
+[2026-04-20 00:40:30] INFO     lime_explainer -   Alert: Risk score: 0.003 | 63.00 < dst_host_srv_count <= 255.00 (LIME: +0.138, increases risk) | dst_bytes <= 0.00 (LIME: -0.128, decreases risk) | duration_peer_zscore <= -0.10 (LIME: +0.111, increases risk)
+[2026-04-20 00:40:30] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row2.png
+[2026-04-20 00:40:30] INFO     lime_explainer - 
+Explaining row 5 (true label: normal)...
+[2026-04-20 00:40:30] INFO     lime_explainer -   Prediction probability: 0.000
+[2026-04-20 00:40:30] INFO     lime_explainer -   Alert: Risk score: 0.000 | src_bytes_peer_zscore <= -0.01 (LIME: -0.214, decreases risk) | 44.00 < src_bytes <= 276.00 (LIME: +0.178, increases risk) | 63.00 < dst_host_srv_count <= 255.00 (LIME: +0.160, increases risk)
+[2026-04-20 00:40:31] INFO     lime_explainer - LIME plot saved -> D:\behavioural-security-layer\outputs\lime_plots\lime_explanation_row5.png
+[2026-04-20 00:40:31] INFO     lime_explainer - 
+LIME explanations complete — 5 samples explained
+[2026-04-20 00:42:04] INFO     shap_explainer - LightGBM loaded — 34 features
+[2026-04-20 00:42:04] INFO     alert_generator - Computing SHAP values for alert generation...
+[2026-04-20 00:42:20] INFO     alert_generator - Building LIME explainer...
+[2026-04-20 00:42:21] INFO     lime_explainer - Building LIME TabularExplainer...
+[2026-04-20 00:42:22] INFO     lime_explainer - LIME explainer ready
+[2026-04-20 00:42:22] INFO     alert_generator - Generating 10 alerts for highest-risk predictions...
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.943
+  Alert triggered: dst host suspicion score is abnormally high (value=0.650, SHAP: +3.121) | src bytes is abnormally high (value=6.000, SHAP: +2.818) | dst host srv count is abnormally high (value=1.000, SHAP: +1.291)
+  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.233) | anomalous_login_flag <= 0.00 (reducing risk, weight=-0.218) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.206)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.943
+  Alert triggered: dst host suspicion score is abnormally high (value=0.639, SHAP: +3.115) | src bytes is abnormally high (value=6.000, SHAP: +2.839) | dst host srv count is abnormally high (value=1.000, SHAP: +1.225)
+  LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.209) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.199) | duration_peer_zscore <= -0.10 (reducing risk, weight=-0.130)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.941
+  Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)
+  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.210) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.205) | src_bytes <= 0.00 (pushing toward attack, weight=+0.187)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.941
+  Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)
+  LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.250) | is_root_escalation <= 0.00 (reducing risk, weight=-0.232) | dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.199)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.941
+  Alert triggered: dst host suspicion score is abnormally high (value=0.629, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)
+  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.216) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.166) | anomalous_login_flag <= 0.00 (reducing risk, weight=-0.140)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.941
+  Alert triggered: dst host suspicion score is abnormally high (value=0.629, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)
+  LIME context: dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.213) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.187) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.180)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.940
+  Alert triggered: dst host suspicion score is abnormally high (value=0.626, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)
+  LIME context: anomalous_login_flag <= 0.00 (reducing risk, weight=-0.241) | dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.164) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.159)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.940
+  Alert triggered: dst host suspicion score is abnormally high (value=0.623, SHAP: +2.968) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.436)
+  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.210) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.197) | src_bytes <= 0.00 (pushing toward attack, weight=+0.193)
+[2026-04-20 00:42:22] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.940
+  Alert triggered: dst host suspicion score is abnormally high (value=0.638, SHAP: +3.112) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.360)
+  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.220) | dst_bytes <= 0.00 (pushing toward attack, weight=+0.162) | privilege_abuse_score <= 0.00 (pushing toward attack, weight=+0.156)
+[2026-04-20 00:42:23] INFO     alert_generator - 
+[!!!] [CRITICAL] Risk Score: 0.939
+  Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.118) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)
+  LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.209) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.180) | src_bytes <= 0.00 (pushing toward attack, weight=+0.162)
+[2026-04-20 00:42:23] INFO     alert_generator - 
+10 alerts saved -> D:\behavioural-security-layer\outputs\alerts\generated_alerts.json
+[2026-04-20 00:42:23] INFO     alert_generator - CSV version saved -> generated_alerts.csv
+[2026-04-20 00:45:38] INFO     dp_mechanism - Testing DP mechanism...
+[2026-04-20 00:45:38] DEBUG    dp_mechanism - Weights clipped: norm=13.9755 -> 1.0000
+[2026-04-20 00:45:38] DEBUG    dp_mechanism - Weights clipped: norm=13.9755 -> 1.0000
+[2026-04-20 00:45:38] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=13.9755
+[2026-04-20 00:45:38] INFO     dp_mechanism - Gaussian sigma=9.6896 (epsilon=0.5, delta=1e-05)
+[2026-04-20 00:45:38] INFO     dp_mechanism - Privacy budget after 10 rounds: epsilon=0.2654 (WITHIN BUDGET)
+[2026-04-20 00:46:39] INFO     fl_client - Running 5 federated clients...
+[2026-04-20 00:46:39] INFO     fl_client - Node 0 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 00:46:39] INFO     fl_client - Node 1 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 00:46:39] INFO     fl_client - Node 2 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 00:46:39] INFO     fl_client - Node 3 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 00:46:39] INFO     fl_client - Node 4 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 00:46:39] INFO     fl_client - Node 0 loaded shard: 25,195 rows
+[2026-04-20 00:46:39] INFO     fl_client - Node 0 starting local training...
+[2026-04-20 00:46:40] DEBUG    dp_mechanism - Weights clipped: norm=717.7792 -> 1.0000
+[2026-04-20 00:46:40] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=717.7792
+[2026-04-20 00:46:40] INFO     fl_client - Node 0 DP noise applied
+[2026-04-20 00:46:40] INFO     fl_client - Node 0 local F1=0.9977 on 25,195 samples
+[2026-04-20 00:46:40] INFO     fl_client - Node 1 loaded shard: 25,195 rows
+[2026-04-20 00:46:40] INFO     fl_client - Node 1 starting local training...
+[2026-04-20 00:46:40] DEBUG    dp_mechanism - Weights clipped: norm=743.0478 -> 1.0000
+[2026-04-20 00:46:40] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=743.0478
+[2026-04-20 00:46:40] INFO     fl_client - Node 1 DP noise applied
+[2026-04-20 00:46:40] INFO     fl_client - Node 1 local F1=0.9978 on 25,195 samples
+[2026-04-20 00:46:40] INFO     fl_client - Node 2 loaded shard: 25,195 rows
+[2026-04-20 00:46:40] INFO     fl_client - Node 2 starting local training...
+[2026-04-20 00:46:40] DEBUG    dp_mechanism - Weights clipped: norm=720.5810 -> 1.0000
+[2026-04-20 00:46:40] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=720.5810
+[2026-04-20 00:46:40] INFO     fl_client - Node 2 DP noise applied
+[2026-04-20 00:46:40] INFO     fl_client - Node 2 local F1=0.9964 on 25,195 samples
+[2026-04-20 00:46:40] INFO     fl_client - Node 3 loaded shard: 25,194 rows
+[2026-04-20 00:46:40] INFO     fl_client - Node 3 starting local training...
+[2026-04-20 00:46:41] DEBUG    dp_mechanism - Weights clipped: norm=737.4375 -> 1.0000
+[2026-04-20 00:46:41] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=737.4375
+[2026-04-20 00:46:41] INFO     fl_client - Node 3 DP noise applied
+[2026-04-20 00:46:41] INFO     fl_client - Node 3 local F1=0.9976 on 25,194 samples
+[2026-04-20 00:46:41] INFO     fl_client - Node 4 loaded shard: 25,194 rows
+[2026-04-20 00:46:41] INFO     fl_client - Node 4 starting local training...
+[2026-04-20 00:46:41] DEBUG    dp_mechanism - Weights clipped: norm=675.9453 -> 1.0000
+[2026-04-20 00:46:41] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=675.9453
+[2026-04-20 00:46:41] INFO     fl_client - Node 4 DP noise applied
+[2026-04-20 00:46:41] INFO     fl_client - Node 4 local F1=0.9979 on 25,194 samples
+[2026-04-20 15:36:26] INFO     fl_client - Node 0 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:36:26] INFO     fl_client - Node 1 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:36:26] INFO     fl_client - Node 2 | size= 25,195 | attack_rate=46.5%
+[2026-04-20 15:36:26] INFO     fl_client - Node 3 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 15:36:26] INFO     fl_client - Node 4 | size= 25,194 | attack_rate=46.5%
+[2026-04-20 15:36:26] INFO     fl_client - Node 0 loaded shard: 25,195 rows
+[2026-04-20 15:36:26] INFO     fl_client - Node 0 starting local training...
+[2026-04-20 15:36:27] DEBUG    dp_mechanism - Weights clipped: norm=717.7792 -> 1.0000
+[2026-04-20 15:36:27] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=717.7792
+[2026-04-20 15:36:27] INFO     fl_client - Node 0 DP noise applied
+[2026-04-20 15:36:27] INFO     fl_client - Node 0 local F1=0.9977 on 25,195 samples
+[2026-04-20 15:36:27] INFO     fl_client - Node 1 loaded shard: 25,195 rows
+[2026-04-20 15:36:27] INFO     fl_client - Node 1 starting local training...
+[2026-04-20 15:36:28] DEBUG    dp_mechanism - Weights clipped: norm=743.0478 -> 1.0000
+[2026-04-20 15:36:28] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=743.0478
+[2026-04-20 15:36:28] INFO     fl_client - Node 1 DP noise applied
+[2026-04-20 15:36:28] INFO     fl_client - Node 1 local F1=0.9978 on 25,195 samples
+[2026-04-20 15:36:28] INFO     fl_client - Node 2 loaded shard: 25,195 rows
+[2026-04-20 15:36:28] INFO     fl_client - Node 2 starting local training...
+[2026-04-20 15:36:28] DEBUG    dp_mechanism - Weights clipped: norm=720.5810 -> 1.0000
+[2026-04-20 15:36:28] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=720.5810
+[2026-04-20 15:36:28] INFO     fl_client - Node 2 DP noise applied
+[2026-04-20 15:36:28] INFO     fl_client - Node 2 local F1=0.9964 on 25,195 samples
+[2026-04-20 15:36:28] INFO     fl_client - Node 3 loaded shard: 25,194 rows
+[2026-04-20 15:36:28] INFO     fl_client - Node 3 starting local training...
+[2026-04-20 15:36:29] DEBUG    dp_mechanism - Weights clipped: norm=737.4375 -> 1.0000
+[2026-04-20 15:36:29] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=737.4375
+[2026-04-20 15:36:29] INFO     fl_client - Node 3 DP noise applied
+[2026-04-20 15:36:29] INFO     fl_client - Node 3 local F1=0.9976 on 25,194 samples
+[2026-04-20 15:36:29] INFO     fl_client - Node 4 loaded shard: 25,194 rows
+[2026-04-20 15:36:29] INFO     fl_client - Node 4 starting local training...
+[2026-04-20 15:36:30] DEBUG    dp_mechanism - Weights clipped: norm=675.9453 -> 1.0000
+[2026-04-20 15:36:30] DEBUG    dp_mechanism - DP noise added: sigma=1.1000, original_norm=675.9453
+[2026-04-20 15:36:30] INFO     fl_client - Node 4 DP noise applied
+[2026-04-20 15:36:30] INFO     fl_client - Node 4 local F1=0.9979 on 25,194 samples
+[2026-04-20 15:36:30] INFO     fl_aggregator - FedAvg (weighted) across 5 nodes (125,973 total samples)
+[2026-04-20 15:36:30] INFO     fl_aggregator - Aggregation stats - mean_F1=0.9975 weight_variance=0.909524 weight_drift=6.0718
