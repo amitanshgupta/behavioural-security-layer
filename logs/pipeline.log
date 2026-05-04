@@ -1400,3 +1400,527 @@ Ablation study saved -> D:\behavioural-security-layer\outputs\metrics\ablation_s
 [2026-04-20 15:48:27] INFO     main - Phase 6 complete
 [2026-04-20 15:48:27] INFO     main - 
 Pipeline finished.
+[2026-04-27 16:59:43] INFO     cert_cleaner - Loading logon.csv...
+[2026-04-27 17:00:03] INFO     cert_cleaner - Logon cleaned: 3,530,285 rows
+[2026-04-27 17:00:03] INFO     cert_cleaner - Loading device.csv...
+[2026-04-27 17:00:12] INFO     cert_cleaner - Device cleaned: 1,551,828 rows
+[2026-04-27 17:00:12] INFO     cert_cleaner - Loading file.csv...
+[2026-04-27 17:00:38] INFO     cert_cleaner - File cleaned: 2,014,883 rows | exfil: 251,126
+[2026-04-27 17:00:38] INFO     cert_cleaner - Sampling http.csv (500,000 rows)...
+[2026-04-27 17:00:46] INFO     cert_cleaner - HTTP cleaned: 500,000 rows | suspicious: 5,777
+[2026-04-27 17:00:46] INFO     cert_cleaner - Sampling email.csv (200,000 rows)...
+[2026-04-27 17:00:48] INFO     cert_cleaner - Email cleaned: 200,000 rows | high risk: 0
+[2026-04-27 17:01:08] INFO     cert_cleaner - Saved -> D:\behavioural-security-layer\data\interim\cert_logon_clean.csv
+[2026-04-27 17:01:17] INFO     cert_cleaner - Saved -> D:\behavioural-security-layer\data\interim\cert_device_clean.csv
+[2026-04-27 17:01:30] INFO     cert_cleaner - Saved -> D:\behavioural-security-layer\data\interim\cert_file_clean.csv
+[2026-04-27 17:01:34] INFO     cert_cleaner - Saved -> D:\behavioural-security-layer\data\interim\cert_http_clean.csv
+[2026-04-27 17:01:36] INFO     cert_cleaner - Saved -> D:\behavioural-security-layer\data\interim\cert_email_clean.csv
+[2026-04-27 17:01:36] INFO     cert_cleaner - 
+CERT Cleaner Summary:
+[2026-04-27 17:01:36] INFO     cert_cleaner -   logon    : 3,530,285 rows, 11 columns
+[2026-04-27 17:01:36] INFO     cert_cleaner -   device   : 1,551,828 rows, 11 columns
+[2026-04-27 17:01:36] INFO     cert_cleaner -   file     : 2,014,883 rows, 13 columns
+[2026-04-27 17:01:36] INFO     cert_cleaner -   http     :   500,000 rows, 13 columns
+[2026-04-27 17:01:36] INFO     cert_cleaner -   email    :   200,000 rows, 16 columns
+[2026-04-27 17:03:26] INFO     cert_features - Starting CERT feature pipeline...
+[2026-04-27 17:03:26] INFO     cert_features - Loading cert_logon_clean.csv...
+[2026-04-27 17:03:37] INFO     cert_features - Loading cert_device_clean.csv...
+[2026-04-27 17:03:42] INFO     cert_features - Loading cert_file_clean.csv...
+[2026-04-27 17:03:51] INFO     cert_features - Loading cert_http_clean.csv...
+[2026-04-27 17:03:53] INFO     cert_features - Loading cert_email_clean.csv...
+[2026-04-27 17:03:55] INFO     cert_features - User context built: 4,000 employees
+[2026-04-27 17:03:55] INFO     cert_features - Building logon features...
+[2026-04-27 17:04:02] INFO     cert_features - Logon features: 1,394,010 user-day records
+[2026-04-27 17:04:02] INFO     cert_features - Building device features...
+[2026-04-27 17:04:03] INFO     cert_features - Device features: 198,993 user-day records
+[2026-04-27 17:04:03] INFO     cert_features - Building file features...
+[2026-04-27 17:04:04] INFO     cert_features - File features: 308,647 user-day records
+[2026-04-27 17:04:04] INFO     cert_features - Building HTTP features...
+[2026-04-27 17:04:04] INFO     cert_features - HTTP features: 8,365 user-day records
+[2026-04-27 17:04:04] INFO     cert_features - Building email features...
+[2026-04-27 17:04:05] INFO     cert_features - Email features: 22,268 user-day records
+[2026-04-27 17:04:05] INFO     cert_features - Merging all feature tables...
+[2026-04-27 17:04:07] INFO     cert_features - Computing role-based peer deviations...
+[2026-04-27 17:04:08] INFO     cert_features - Role peer z-scores added for 10 features
+[2026-04-27 17:04:08] INFO     cert_features - Labels built — 7.3% user-days flagged as malicious
+[2026-04-27 17:04:08] INFO     cert_features - CERT feature matrix: 1,394,010 user-day rows, 50 columns
+[2026-04-27 17:05:04] INFO     cert_features - Saved -> D:\behavioural-security-layer\data\processed\cert_features.csv
+[2026-04-27 17:07:20] INFO     cert_model - Loading D:\behavioural-security-layer\data\processed\cert_features.csv...
+[2026-04-27 17:07:31] INFO     cert_model - CERT data: 1,394,010 rows, 43 features
+[2026-04-27 17:07:32] INFO     cert_model - Label distribution: {0: 1291754, 1: 102256}
+[2026-04-27 17:07:32] INFO     cert_model - Train: 1,115,208 | Test: 278,802
+[2026-04-27 17:07:33] INFO     cert_model - Train: 947,926 | Val: 167,282 | Test: 278,802
+[2026-04-27 17:07:33] INFO     cert_model - Training CERT LightGBM...
+[2026-04-27 17:07:43] INFO     cert_model - Training complete — best iteration: 200
+[2026-04-27 17:07:47] INFO     cert_model - 
+--- CERT LightGBM [train] ---
+[2026-04-27 17:07:47] INFO     cert_model - F1=1.0000 | Precision=1.0000 | Recall=1.0000 | AUC=1.0000 | FPR=0.0000
+[2026-04-27 17:07:47] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      1.00      1.00   1034600
+      attack       1.00      1.00      1.00     80608
+
+    accuracy                           1.00   1115208
+   macro avg       1.00      1.00      1.00   1115208
+weighted avg       1.00      1.00      1.00   1115208
+
+[2026-04-27 17:07:47] INFO     cert_model - Confusion Matrix:
+[[1034600       0]
+ [      0   80608]]
+[2026-04-27 17:07:49] INFO     cert_model - 
+--- CERT LightGBM [test] ---
+[2026-04-27 17:07:49] INFO     cert_model - F1=1.0000 | Precision=1.0000 | Recall=1.0000 | AUC=1.0000 | FPR=0.0000
+[2026-04-27 17:07:49] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      1.00      1.00    257154
+      attack       1.00      1.00      1.00     21648
+
+    accuracy                           1.00    278802
+   macro avg       1.00      1.00      1.00    278802
+weighted avg       1.00      1.00      1.00    278802
+
+[2026-04-27 17:07:49] INFO     cert_model - Confusion Matrix:
+[[257154      0]
+ [     0  21648]]
+[2026-04-27 17:07:49] INFO     cert_model - 
+Top 15 CERT features:
+[2026-04-27 17:07:49] INFO     cert_model -   file_events                                     2816.0
+[2026-04-27 17:07:49] INFO     cert_model -   unique_files                                    2334.0
+[2026-04-27 17:07:49] INFO     cert_model -   file_events_role_zscore                         1876.0
+[2026-04-27 17:07:49] INFO     cert_model -   executable_access                                905.0
+[2026-04-27 17:07:49] INFO     cert_model -   usb_connects                                     506.0
+[2026-04-27 17:07:49] INFO     cert_model -   psych_risk_score                                 373.0
+[2026-04-27 17:07:49] INFO     cert_model -   usb_connects_role_zscore                         364.0
+[2026-04-27 17:07:49] INFO     cert_model -   exfil_attempts_role_zscore                       361.0
+[2026-04-27 17:07:49] INFO     cert_model -   C                                                314.0
+[2026-04-27 17:07:49] INFO     cert_model -   logon_hour_std                                   269.0
+[2026-04-27 17:07:49] INFO     cert_model -   external_emails_role_zscore                      216.0
+[2026-04-27 17:07:49] INFO     cert_model -   total_logons_role_zscore                         214.0
+[2026-04-27 17:07:49] INFO     cert_model -   role_tier                                        157.0
+[2026-04-27 17:07:49] INFO     cert_model -   logon_hour_mean                                  153.0
+[2026-04-27 17:07:49] INFO     cert_model -   total_logons                                     141.0
+[2026-04-27 17:07:49] INFO     cert_model - Training CERT Isolation Forest on 1,034,600 normal user-days...
+[2026-04-27 17:07:55] INFO     cert_model - IF training complete
+[2026-04-27 17:07:57] INFO     cert_model - 
+--- CERT IsolationForest [test] ---
+[2026-04-27 17:07:57] INFO     cert_model - F1=0.6107 | Precision=0.4717 | Recall=0.8659 | AUC=0.9608 | FPR=0.0816
+[2026-04-27 17:07:57] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       0.99      0.92      0.95    257154
+      attack       0.47      0.87      0.61     21648
+
+    accuracy                           0.91    278802
+   macro avg       0.73      0.89      0.78    278802
+weighted avg       0.95      0.91      0.93    278802
+
+[2026-04-27 17:07:57] INFO     cert_model - Confusion Matrix:
+[[236163  20991]
+ [  2903  18745]]
+[2026-04-27 17:07:57] INFO     cert_model - Models saved -> D:\behavioural-security-layer\data\metadata\cert_lightgbm.pkl, D:\behavioural-security-layer\data\metadata\cert_isolation_forest.pkl
+[2026-04-27 17:08:12] INFO     cert_model - Scored test set saved -> D:\behavioural-security-layer\data\processed\cert_test_scored.csv
+[2026-04-27 17:09:46] INFO     cert_model - Loading D:\behavioural-security-layer\data\processed\cert_features.csv...
+[2026-04-27 17:09:57] INFO     cert_model - CERT data: 1,394,010 rows, 42 features
+[2026-04-27 17:09:57] INFO     cert_model - Label distribution: {0: 1291754, 1: 102256}
+[2026-04-27 17:09:57] INFO     cert_model - Train: 1,115,208 | Test: 278,802
+[2026-04-27 17:09:59] INFO     cert_model - Train: 947,926 | Val: 167,282 | Test: 278,802
+[2026-04-27 17:09:59] INFO     cert_model - Training CERT LightGBM...
+[2026-04-27 17:10:08] INFO     cert_model - Training complete — best iteration: 200
+[2026-04-27 17:10:12] INFO     cert_model - 
+--- CERT LightGBM [train] ---
+[2026-04-27 17:10:12] INFO     cert_model - F1=0.7465 | Precision=0.5956 | Recall=0.9999 | AUC=0.9914 | FPR=0.0529
+[2026-04-27 17:10:13] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.95      0.97   1034600
+      attack       0.60      1.00      0.75     80608
+
+    accuracy                           0.95   1115208
+   macro avg       0.80      0.97      0.86   1115208
+weighted avg       0.97      0.95      0.96   1115208
+
+[2026-04-27 17:10:13] INFO     cert_model - Confusion Matrix:
+[[979887  54713]
+ [    12  80596]]
+[2026-04-27 17:10:14] INFO     cert_model - 
+--- CERT LightGBM [test] ---
+[2026-04-27 17:10:14] INFO     cert_model - F1=0.7496 | Precision=0.5999 | Recall=0.9989 | AUC=0.9908 | FPR=0.0561
+[2026-04-27 17:10:14] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.94      0.97    257154
+      attack       0.60      1.00      0.75     21648
+
+    accuracy                           0.95    278802
+   macro avg       0.80      0.97      0.86    278802
+weighted avg       0.97      0.95      0.95    278802
+
+[2026-04-27 17:10:14] INFO     cert_model - Confusion Matrix:
+[[242731  14423]
+ [    23  21625]]
+[2026-04-27 17:10:14] INFO     cert_model - 
+Top 15 CERT features:
+[2026-04-27 17:10:14] INFO     cert_model -   unique_files                                    1247.0
+[2026-04-27 17:10:14] INFO     cert_model -   file_events                                     1220.0
+[2026-04-27 17:10:14] INFO     cert_model -   logon_hour_std                                   847.0
+[2026-04-27 17:10:14] INFO     cert_model -   file_events_role_zscore                          812.0
+[2026-04-27 17:10:14] INFO     cert_model -   logon_hour_mean                                  658.0
+[2026-04-27 17:10:14] INFO     cert_model -   psych_risk_score                                 589.0
+[2026-04-27 17:10:14] INFO     cert_model -   E                                                569.0
+[2026-04-27 17:10:14] INFO     cert_model -   usb_connects_role_zscore                         526.0
+[2026-04-27 17:10:14] INFO     cert_model -   O                                                525.0
+[2026-04-27 17:10:14] INFO     cert_model -   usb_connects                                     505.0
+[2026-04-27 17:10:14] INFO     cert_model -   A                                                442.0
+[2026-04-27 17:10:14] INFO     cert_model -   executable_access                                416.0
+[2026-04-27 17:10:14] INFO     cert_model -   C                                                413.0
+[2026-04-27 17:10:14] INFO     cert_model -   N                                                379.0
+[2026-04-27 17:10:14] INFO     cert_model -   unique_pcs_role_zscore                           236.0
+[2026-04-27 17:10:15] INFO     cert_model - Training CERT Isolation Forest on 1,034,600 normal user-days...
+[2026-04-27 17:10:20] INFO     cert_model - IF training complete
+[2026-04-27 17:10:22] INFO     cert_model - 
+--- CERT IsolationForest [test] ---
+[2026-04-27 17:10:22] INFO     cert_model - F1=0.6054 | Precision=0.4716 | Recall=0.8454 | AUC=0.9615 | FPR=0.0798
+[2026-04-27 17:10:23] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       0.99      0.92      0.95    257154
+      attack       0.47      0.85      0.61     21648
+
+    accuracy                           0.91    278802
+   macro avg       0.73      0.88      0.78    278802
+weighted avg       0.95      0.91      0.93    278802
+
+[2026-04-27 17:10:23] INFO     cert_model - Confusion Matrix:
+[[236645  20509]
+ [  3346  18302]]
+[2026-04-27 17:10:23] INFO     cert_model - Models saved -> D:\behavioural-security-layer\data\metadata\cert_lightgbm.pkl, D:\behavioural-security-layer\data\metadata\cert_isolation_forest.pkl
+[2026-04-27 17:10:36] INFO     cert_model - Scored test set saved -> D:\behavioural-security-layer\data\processed\cert_test_scored.csv
+[2026-04-27 22:17:37] INFO     main - Running Phase 8 only
+[2026-04-27 22:17:37] INFO     main - ============================================================
+[2026-04-27 22:17:37] INFO     main - CERT — Model Training
+[2026-04-27 22:17:38] INFO     main - ============================================================
+[2026-04-27 22:18:12] INFO     cert_model - Loading D:\behavioural-security-layer\data\processed\cert_features.csv...
+[2026-04-27 22:18:39] INFO     cert_model - CERT data: 1,394,010 rows, 42 features
+[2026-04-27 22:18:39] INFO     cert_model - Label distribution: {0: 1291754, 1: 102256}
+[2026-04-27 22:18:39] INFO     cert_model - Train: 1,115,208 | Test: 278,802
+[2026-04-27 22:18:45] INFO     cert_model - Train: 947,926 | Val: 167,282 | Test: 278,802
+[2026-04-27 22:18:45] INFO     cert_model - Training CERT LightGBM...
+[2026-04-27 22:19:25] INFO     cert_model - Training complete — best iteration: 200
+[2026-04-27 22:19:36] INFO     cert_model - 
+--- CERT LightGBM [train] ---
+[2026-04-27 22:19:36] INFO     cert_model - F1=0.7465 | Precision=0.5956 | Recall=0.9999 | AUC=0.9914 | FPR=0.0529
+[2026-04-27 22:19:37] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.95      0.97   1034600
+      attack       0.60      1.00      0.75     80608
+
+    accuracy                           0.95   1115208
+   macro avg       0.80      0.97      0.86   1115208
+weighted avg       0.97      0.95      0.96   1115208
+
+[2026-04-27 22:19:37] INFO     cert_model - Confusion Matrix:
+[[979887  54713]
+ [    12  80596]]
+[2026-04-27 22:19:52] INFO     cert_model - 
+--- CERT LightGBM [test] ---
+[2026-04-27 22:19:52] INFO     cert_model - F1=0.7496 | Precision=0.5999 | Recall=0.9989 | AUC=0.9908 | FPR=0.0561
+[2026-04-27 22:19:53] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.94      0.97    257154
+      attack       0.60      1.00      0.75     21648
+
+    accuracy                           0.95    278802
+   macro avg       0.80      0.97      0.86    278802
+weighted avg       0.97      0.95      0.95    278802
+
+[2026-04-27 22:19:53] INFO     cert_model - Confusion Matrix:
+[[242731  14423]
+ [    23  21625]]
+[2026-04-27 22:19:53] INFO     cert_model - 
+Top 15 CERT features:
+[2026-04-27 22:19:53] INFO     cert_model -   unique_files                                    1247.0
+[2026-04-27 22:19:53] INFO     cert_model -   file_events                                     1220.0
+[2026-04-27 22:19:53] INFO     cert_model -   logon_hour_std                                   847.0
+[2026-04-27 22:19:53] INFO     cert_model -   file_events_role_zscore                          812.0
+[2026-04-27 22:19:53] INFO     cert_model -   logon_hour_mean                                  658.0
+[2026-04-27 22:19:53] INFO     cert_model -   psych_risk_score                                 589.0
+[2026-04-27 22:19:53] INFO     cert_model -   E                                                569.0
+[2026-04-27 22:19:53] INFO     cert_model -   usb_connects_role_zscore                         526.0
+[2026-04-27 22:19:53] INFO     cert_model -   O                                                525.0
+[2026-04-27 22:19:53] INFO     cert_model -   usb_connects                                     505.0
+[2026-04-27 22:19:53] INFO     cert_model -   A                                                442.0
+[2026-04-27 22:19:53] INFO     cert_model -   executable_access                                416.0
+[2026-04-27 22:19:53] INFO     cert_model -   C                                                413.0
+[2026-04-27 22:19:53] INFO     cert_model -   N                                                379.0
+[2026-04-27 22:19:53] INFO     cert_model -   unique_pcs_role_zscore                           236.0
+[2026-04-27 22:19:54] INFO     cert_model - Training CERT Isolation Forest on 1,034,600 normal user-days...
+[2026-04-27 22:20:09] INFO     cert_model - IF training complete
+[2026-04-27 22:20:15] INFO     cert_model - 
+--- CERT IsolationForest [test] ---
+[2026-04-27 22:20:15] INFO     cert_model - F1=0.6054 | Precision=0.4716 | Recall=0.8454 | AUC=0.9615 | FPR=0.0798
+[2026-04-27 22:20:16] INFO     cert_model - 
+              precision    recall  f1-score   support
+
+      normal       0.99      0.92      0.95    257154
+      attack       0.47      0.85      0.61     21648
+
+    accuracy                           0.91    278802
+   macro avg       0.73      0.88      0.78    278802
+weighted avg       0.95      0.91      0.93    278802
+
+[2026-04-27 22:20:16] INFO     cert_model - Confusion Matrix:
+[[236645  20509]
+ [  3346  18302]]
+[2026-04-27 22:20:16] INFO     cert_model - Models saved -> D:\behavioural-security-layer\data\metadata\cert_lightgbm.pkl, D:\behavioural-security-layer\data\metadata\cert_isolation_forest.pkl
+[2026-04-27 22:20:46] INFO     cert_model - Scored test set saved -> D:\behavioural-security-layer\data\processed\cert_test_scored.csv
+[2026-04-27 22:20:46] INFO     main - CERT model training complete
+[2026-04-27 22:20:46] INFO     main - 
+Pipeline finished.
+[2026-04-30 14:33:18] INFO     combined_model - Loading NSL-KDD and CERT datasets...
+[2026-04-30 14:33:42] INFO     combined_model - Shared feature set: 43 features
+[2026-04-30 14:33:43] INFO     combined_model - Combined dataset: 1,416,554 rows | attack rate: 8.1%
+[2026-04-30 14:33:53] INFO     combined_model - Train: 963,256 | Val: 169,987 | Test: 283,311
+[2026-04-30 14:33:53] INFO     combined_model - Training combined LightGBM...
+[2026-04-30 14:34:27] INFO     combined_model - Training complete — best iteration: 200
+[2026-04-30 14:34:29] INFO     combined_model - 
+--- Combined [test] ---
+[2026-04-30 14:34:29] INFO     combined_model - F1=0.7637 | Precision=0.6183 | Recall=0.9988 | AUC=0.9917 | FPR=0.0545
+[2026-04-30 14:34:30] INFO     combined_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.95      0.97    260293
+      attack       0.62      1.00      0.76     23018
+
+    accuracy                           0.95    283311
+   macro avg       0.81      0.97      0.87    283311
+weighted avg       0.97      0.95      0.96    283311
+
+[2026-04-30 14:34:30] INFO     combined_model - Confusion Matrix:
+[[246098  14195]
+ [    28  22990]]
+[2026-04-30 14:34:30] INFO     combined_model - 
+Top 15 combined features:
+[2026-04-30 14:34:30] INFO     combined_model -   file_events                                     1347.0
+[2026-04-30 14:34:30] INFO     combined_model -   file_events_role_zscore                         1135.0
+[2026-04-30 14:34:30] INFO     combined_model -   unique_files                                    1113.0
+[2026-04-30 14:34:30] INFO     combined_model -   N                                                542.0
+[2026-04-30 14:34:30] INFO     combined_model -   peer_outlier_score                               502.0
+[2026-04-30 14:34:30] INFO     combined_model -   psych_risk_score                                 497.0
+[2026-04-30 14:34:30] INFO     combined_model -   usb_connects_role_zscore                         479.0
+[2026-04-30 14:34:30] INFO     combined_model -   logon_hour_std                                   463.0
+[2026-04-30 14:34:30] INFO     combined_model -   dst_host_suspicion_score                         432.0
+[2026-04-30 14:34:30] INFO     combined_model -   src_bytes_peer_zscore                            405.0
+[2026-04-30 14:34:30] INFO     combined_model -   logon_hour_mean                                  376.0
+[2026-04-30 14:34:30] INFO     combined_model -   bytes_ratio                                      372.0
+[2026-04-30 14:34:30] INFO     combined_model -   dst_bytes                                        351.0
+[2026-04-30 14:34:30] INFO     combined_model -   A                                                341.0
+[2026-04-30 14:34:30] INFO     combined_model -   E                                                316.0
+[2026-04-30 14:34:30] INFO     combined_model - Combined model saved -> D:\behavioural-security-layer\data\metadata\combined_lightgbm.pkl
+[2026-04-30 14:44:21] INFO     load_cicids - Found 8 CICIDS2017 files
+[2026-04-30 14:44:21] INFO     load_cicids - Loading Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv...
+[2026-04-30 14:44:27] INFO     load_cicids -   225,745 rows | attacks: 128,027
+[2026-04-30 14:44:27] INFO     load_cicids - Loading Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv...
+[2026-04-30 14:44:33] INFO     load_cicids -   286,467 rows | attacks: 158,930
+[2026-04-30 14:44:33] INFO     load_cicids - Loading Friday-WorkingHours-Morning.pcap_ISCX.csv...
+[2026-04-30 14:44:38] INFO     load_cicids -   191,033 rows | attacks: 1,966
+[2026-04-30 14:44:38] INFO     load_cicids - Loading Monday-WorkingHours.pcap_ISCX.csv...
+[2026-04-30 14:44:52] INFO     load_cicids -   529,918 rows | attacks: 0
+[2026-04-30 14:44:52] INFO     load_cicids - Loading Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv...
+[2026-04-30 14:45:00] INFO     load_cicids -   288,602 rows | attacks: 36
+[2026-04-30 14:45:00] INFO     load_cicids - Loading Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv...
+[2026-04-30 14:45:05] INFO     load_cicids -   170,366 rows | attacks: 2,180
+[2026-04-30 14:45:05] INFO     load_cicids - Loading Tuesday-WorkingHours.pcap_ISCX.csv...
+[2026-04-30 14:45:17] INFO     load_cicids -   445,909 rows | attacks: 13,835
+[2026-04-30 14:45:17] INFO     load_cicids - Loading Wednesday-workingHours.pcap_ISCX.csv...
+[2026-04-30 14:45:37] INFO     load_cicids -   692,703 rows | attacks: 252,672
+[2026-04-30 14:45:37] INFO     load_cicids - Total rows before cleaning: 2,830,743
+[2026-04-30 14:45:43] INFO     load_cicids - CICIDS loaded: 2,830,743 rows | attack rate: 19.7%
+[2026-04-30 14:45:44] INFO     load_cicids - Attack types: {'BENIGN': 2273097, 'DoS Hulk': 231073, 'PortScan': 158930, 'DDoS': 128027, 'DoS GoldenEye': 10293, 'FTP-Patator': 7938, 'SSH-Patator': 5897, 'DoS slowloris': 5796, 'DoS Slowhttptest': 5499, 'Bot': 1966, 'Web Attack � Brute Force': 1507, 'Web Attack � XSS': 652, 'Infiltration': 36, 'Web Attack � Sql Injection': 21, 'Heartbleed': 11}
+[2026-04-30 14:47:56] INFO     load_cicids - Saved -> D:\behavioural-security-layer\data\interim\cicids_clean.csv
+[2026-04-30 14:50:45] INFO     unify_schema - Loading NSL-KDD for unification...
+[2026-04-30 14:50:48] INFO     unify_schema - NSL-KDD unified: 148,517 rows
+[2026-04-30 14:50:48] INFO     unify_schema - Loading CICIDS for unification (sample=0.3)...
+[2026-04-30 14:51:30] INFO     unify_schema - CICIDS unified: 849,223 rows
+[2026-04-30 14:51:30] INFO     unify_schema - Unified feature set: 45 features
+[2026-04-30 14:51:30] INFO     unify_schema - Unified dataset: 997,740 rows | attack rate: 24.0%
+[2026-04-30 14:51:30] INFO     unify_schema - NSL-KDD: 148,517 | CICIDS: 849,223
+[2026-04-30 14:52:32] INFO     unify_schema - Unified dataset saved -> D:\behavioural-security-layer\data\processed\unified_network_features.csv
+[2026-04-30 14:54:16] INFO     network_ids_model - Loading D:\behavioural-security-layer\data\processed\unified_network_features.csv...
+[2026-04-30 14:54:27] INFO     network_ids_model - Loaded: 997,740 rows | 45 features | attack rate: 24.0%
+[2026-04-30 14:54:34] INFO     network_ids_model - Train: 678,463 | Val: 119,729 | Test: 199,548
+[2026-04-30 14:54:34] INFO     network_ids_model - Training Network IDS LightGBM...
+[2026-04-30 14:55:04] INFO     network_ids_model - LGB training complete — best iteration: 200
+[2026-04-30 14:55:04] INFO     network_ids_model - Training Network IDS Isolation Forest...
+[2026-04-30 14:55:14] INFO     network_ids_model - 
+--- Network IDS LightGBM [test] ---
+[2026-04-30 14:55:14] INFO     network_ids_model - F1=0.9936 | Precision=0.9909 | Recall=0.9963 | AUC=0.9998 | FPR=0.0029
+[2026-04-30 14:55:14] INFO     network_ids_model - 
+              precision    recall  f1-score   support
+
+      normal       1.00      1.00      1.00    151725
+      attack       0.99      1.00      0.99     47823
+
+    accuracy                           1.00    199548
+   macro avg       0.99      1.00      1.00    199548
+weighted avg       1.00      1.00      1.00    199548
+
+[2026-04-30 14:55:14] INFO     network_ids_model - Confusion Matrix:
+[[151286    439]
+ [   175  47648]]
+[2026-04-30 14:55:19] INFO     network_ids_model - 
+--- Network IDS IF [test] ---
+[2026-04-30 14:55:19] INFO     network_ids_model - F1=0.5271 | Precision=0.4517 | Recall=0.6327 | AUC=0.7804 | FPR=0.2420
+[2026-04-30 14:55:19] INFO     network_ids_model - 
+              precision    recall  f1-score   support
+
+      normal       0.87      0.76      0.81    151725
+      attack       0.45      0.63      0.53     47823
+
+    accuracy                           0.73    199548
+   macro avg       0.66      0.70      0.67    199548
+weighted avg       0.77      0.73      0.74    199548
+
+[2026-04-30 14:55:19] INFO     network_ids_model - Confusion Matrix:
+[[115004  36721]
+ [ 17566  30257]]
+[2026-04-30 14:55:19] INFO     network_ids_model - 
+Per-dataset breakdown (LightGBM):
+[2026-04-30 14:55:20] INFO     network_ids_model -   NSLKDD     F1=0.9913 | AUC=0.9996 | FPR=0.0128
+[2026-04-30 14:55:23] INFO     network_ids_model -   CICIDS     F1=0.9946 | AUC=0.9999 | FPR=0.0018
+[2026-04-30 14:55:23] INFO     network_ids_model - 
+Top 15 features:
+[2026-04-30 14:55:23] INFO     network_ids_model -   service_diversity_score                         1070.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   src_bytes                                        870.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   init_win_bwd                                     841.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   init_win_fwd                                     828.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   bytes_ratio                                      599.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   duration                                         553.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   srv_count                                        545.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   dst_bytes                                        498.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   count                                            387.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   src_bytes_peer_zscore                            379.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   flow_iat_mean                                    363.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   flow_iat_std                                     342.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   max_pkt_len                                      327.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   flow_pkts_per_sec                                314.0
+[2026-04-30 14:55:23] INFO     network_ids_model -   bwd_pkts_per_sec                                 313.0
+[2026-04-30 14:55:24] INFO     network_ids_model - Models saved -> D:\behavioural-security-layer\data\metadata\network_ids_lgb.pkl, D:\behavioural-security-layer\data\metadata\network_ids_if.pkl
+[2026-04-30 14:55:43] INFO     network_ids_model - Scored test saved -> network_ids_test_scored.csv
+[2026-04-30 15:35:15] INFO     genai_detector_cert - Loading HTTP data...
+[2026-04-30 15:35:21] INFO     genai_detector_cert - Loading CERT feature matrix...
+[2026-04-30 15:35:50] INFO     genai_detector_cert - Building HTTP GenAI proxy features...
+[2026-04-30 15:35:52] INFO     genai_detector_cert - HTTP features built: 8,365 user-day records
+[2026-04-30 15:35:52] INFO     genai_detector_cert - Merging GenAI features into CERT matrix...
+[2026-04-30 15:35:53] INFO     genai_detector_cert - Merged matrix: (1394010, 62)
+[2026-04-30 15:35:53] INFO     genai_detector_cert - Using 19 GenAI features: ['genai_proxy_visits', 'freelance_visits', 'cloud_visits', 'media_visits', 'non_work_ratio', 'after_hours_ratio', 'rapid_request_score', 'browsing_entropy', 'usb_connects', 'usb_after_hours', 'exfil_attempts_role_zscore', 'executable_access', 'external_emails', 'high_risk_emails', 'after_hours_logons', 'logon_hour_std', 'psych_risk_score', 'N', 'C']
+[2026-04-30 15:35:54] INFO     genai_detector_cert - Training GenAI One-Class SVM on 1,034,600 normal user-days (nu=0.05)...
+[2026-05-02 22:11:21] INFO     genai_detector_cert - Loading HTTP data...
+[2026-05-02 22:11:26] INFO     genai_detector_cert - Loading CERT feature matrix (sampled)...
+[2026-05-02 22:11:30] INFO     genai_detector_cert - Building HTTP GenAI proxy features...
+[2026-05-02 22:11:31] INFO     genai_detector_cert - HTTP features built: 8,365 user-day records
+[2026-05-02 22:11:31] INFO     genai_detector_cert - Merging GenAI features into CERT matrix...
+[2026-05-02 22:11:32] INFO     genai_detector_cert - Merged matrix: (200000, 62)
+[2026-05-02 22:11:32] INFO     genai_detector_cert - Using 19 GenAI features: ['genai_proxy_visits', 'freelance_visits', 'cloud_visits', 'media_visits', 'non_work_ratio', 'after_hours_ratio', 'rapid_request_score', 'browsing_entropy', 'usb_connects', 'usb_after_hours', 'exfil_attempts_role_zscore', 'executable_access', 'external_emails', 'high_risk_emails', 'after_hours_logons', 'logon_hour_std', 'psych_risk_score', 'N', 'C']
+[2026-05-02 22:11:32] INFO     genai_detector_cert - Training GenAI One-Class SVM on 147,091 normal user-days (nu=0.05)...
+[2026-05-02 22:16:18] INFO     genai_detector_cert - Training complete
+[2026-05-02 22:22:34] INFO     genai_detector_cert - 
+--- CERT GenAI Detector [train] ---
+[2026-05-02 22:22:34] INFO     genai_detector_cert - F1=0.7551 | AUC=1.0000 | FPR=0.0569
+[2026-05-02 22:22:35] INFO     genai_detector_cert - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.94      0.97    147091
+      attack       0.61      1.00      0.76     12909
+
+    accuracy                           0.95    160000
+   macro avg       0.80      0.97      0.86    160000
+weighted avg       0.97      0.95      0.95    160000
+
+[2026-05-02 22:22:35] INFO     genai_detector_cert - Confusion Matrix:
+[[138717   8374]
+ [     0  12909]]
+[2026-05-02 22:24:10] INFO     genai_detector_cert - 
+--- CERT GenAI Detector [test] ---
+[2026-05-02 22:24:10] INFO     genai_detector_cert - F1=0.7467 | AUC=0.9996 | FPR=0.0520
+[2026-05-02 22:24:10] INFO     genai_detector_cert - 
+              precision    recall  f1-score   support
+
+      normal       1.00      0.95      0.97     37154
+      attack       0.60      1.00      0.75      2846
+
+    accuracy                           0.95     40000
+   macro avg       0.80      0.97      0.86     40000
+weighted avg       0.97      0.95      0.96     40000
+
+[2026-05-02 22:24:11] INFO     genai_detector_cert - Confusion Matrix:
+[[35223  1931]
+ [    0  2846]]
+[2026-05-02 22:24:11] INFO     genai_detector_cert - Model saved -> D:\behavioural-security-layer\data\metadata\genai_detector_cert.pkl
+[2026-05-02 22:24:13] INFO     genai_detector_cert - Scored output saved -> cert_genai_scored.csv
+[2026-05-04 03:06:13] INFO     main_api - Loading models...
+[2026-05-04 03:06:13] INFO     inference - Loading models for inference...
+[2026-05-04 03:06:34] INFO     inference - All models loaded
+[2026-05-04 03:06:34] INFO     main_api - API ready
+[2026-05-04 03:06:34] INFO     main_api - WS connected — 1 active
+[2026-05-04 03:06:35] INFO     main_api - WS connected — 2 active
+[2026-05-04 03:06:47] INFO     simulator - Simulator loaded 22,544 events
+[2026-05-04 03:06:48] INFO     simulator - After attack boost: 48,210 events
+[2026-05-04 03:06:48] INFO     simulator - Simulator starting — 1.0 events/sec
+[2026-05-04 03:07:21] INFO     simulator - Simulator stopped after 18 events
+[2026-05-04 03:07:32] INFO     main_api - Analyst action: ALT-2136590981 → confirm
+[2026-05-04 03:07:36] INFO     main_api - Analyst action: ALT-2136590981 → confirm
+[2026-05-04 03:07:37] INFO     main_api - Analyst action: ALT-2136590981 → escalate
+[2026-05-04 03:07:37] INFO     main_api - Analyst action: ALT-2136590981 → escalate
+[2026-05-04 03:07:38] INFO     main_api - Analyst action: ALT-2136590981 → escalate
+[2026-05-04 03:07:38] INFO     main_api - Analyst action: ALT-2136590981 → escalate
+[2026-05-04 03:07:39] INFO     main_api - Analyst action: ALT-2136590981 → confirm
+[2026-05-04 03:07:39] INFO     main_api - Analyst action: ALT-2136590981 → confirm
+[2026-05-04 03:07:39] INFO     main_api - Analyst action: ALT-2136590981 → confirm
+[2026-05-04 03:07:46] INFO     main_api - WS disconnected — 1 active
+[2026-05-04 03:07:46] INFO     main_api - WS disconnected — 0 active
+[2026-05-04 03:07:46] INFO     main_api - WS connected — 1 active
+[2026-05-04 03:07:49] INFO     main_api - WS connected — 2 active
+[2026-05-04 03:10:13] INFO     simulator - Simulator loaded 22,544 events
+[2026-05-04 03:10:13] INFO     simulator - After attack boost: 48,210 events
+[2026-05-04 03:10:13] INFO     simulator - Simulator starting — 1.0 events/sec
+[2026-05-04 03:10:47] INFO     main_api - Analyst action: ALT-2140456110 → dismiss
+[2026-05-04 03:10:48] INFO     main_api - Analyst action: ALT-2140456110 → dismiss
+[2026-05-04 03:10:48] INFO     main_api - Analyst action: ALT-2140456110 → dismiss
+[2026-05-04 03:10:48] INFO     main_api - Analyst action: ALT-2140456110 → dismiss
+[2026-05-04 03:10:48] INFO     main_api - Analyst action: ALT-2140456110 → dismiss
+[2026-05-04 03:10:56] INFO     main_api - Analyst action: ALT-2140456110 → escalate
+[2026-05-04 03:10:57] INFO     main_api - Analyst action: ALT-2140456110 → dismiss
+[2026-05-04 03:10:58] INFO     main_api - Analyst action: ALT-2140456110 → confirm
+[2026-05-04 03:11:06] INFO     simulator - Simulator stopped after 38 events
+[2026-05-04 03:11:44] INFO     main_api - WS disconnected — 1 active
+[2026-05-04 03:11:44] INFO     main_api - WS disconnected — 0 active
+[2026-05-04 14:58:05] INFO     main_api - Loading models...
+[2026-05-04 14:58:05] INFO     inference - Loading models for inference...
+[2026-05-04 14:58:21] INFO     inference - All models loaded
+[2026-05-04 14:58:21] INFO     main_api - API ready
+[2026-05-04 14:58:22] INFO     main_api - WS connected — 1 active
+[2026-05-04 14:58:24] INFO     main_api - WS connected — 2 active
+[2026-05-04 14:59:14] INFO     simulator - Simulator loaded 22,544 events
+[2026-05-04 14:59:14] INFO     simulator - After attack boost: 48,210 events
+[2026-05-04 14:59:14] INFO     simulator - Simulator starting — 1.0 events/sec
+[2026-05-04 14:59:58] INFO     main_api - WS disconnected — 1 active
+[2026-05-04 14:59:58] INFO     main_api - WS disconnected — 0 active
+[2026-05-04 14:59:58] INFO     main_api - WS connected — 1 active
+[2026-05-04 15:00:01] INFO     main_api - WS connected — 2 active
+[2026-05-04 15:03:19] INFO     simulator - Simulator stopped after 174 events
+[2026-05-04 15:05:08] INFO     main_api - Analyst action: ALT-0932250601 → escalate
+[2026-05-04 15:05:23] INFO     main_api - Analyst action: ALT-0932250601 → confirm
+[2026-05-04 15:05:28] INFO     main_api - Analyst action: ALT-0932234183 → dismiss
+[2026-05-04 15:53:57] INFO     main_api - WS disconnected — 1 active
+[2026-05-04 15:53:57] INFO     main_api - WS disconnected — 0 active
+[2026-05-04 16:39:17] INFO     main_api - WS connected — 1 active
+[2026-05-04 16:39:18] INFO     main_api - WS disconnected — 0 active
+[2026-05-04 16:39:18] INFO     main_api - WS connected — 1 active
+[2026-05-04 16:39:22] INFO     main_api - WS connected — 2 active
+[2026-05-04 16:39:25] INFO     main_api - WS connected — 3 active
+[2026-05-04 17:24:39] INFO     main_api - WS disconnected — 2 active
+[2026-05-04 17:24:39] INFO     main_api - WS disconnected — 1 active

@@ -161,6 +161,42 @@ def run_phase6():
     return True
 
 
+def run_cert_pipeline():
+    """CERT data cleaning + feature engineering."""
+    log.info("=" * 60)
+    log.info("CERT — Data Pipeline")
+    log.info("=" * 60)
+
+    from preprocessing.cert_cleaner import run_cert_cleaner
+    from feature_engineering.cert_features import run_cert_feature_pipeline
+
+    run_cert_cleaner(save=True)
+    run_cert_feature_pipeline(save=True)
+
+    log.info("CERT pipeline complete")
+    return True
+
+
+def run_cert_models_phase():
+    """Train models on CERT + unified network data."""
+    log.info("=" * 60)
+    log.info("CERT — Model Training")
+    log.info("=" * 60)
+
+    from models.cert_model import run_cert_models
+    from models.genai_detector_cert import run_genai_cert
+    from models.network_ids_model import run_network_ids
+    from models.combined_model import run_combined_model
+
+    run_cert_models()
+    run_genai_cert()
+    run_network_ids()
+    run_combined_model()
+
+    log.info("CERT model training complete")
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Behavioral Security Layer — Full Pipeline"
@@ -168,35 +204,37 @@ def main():
     parser.add_argument(
         "--phase",
         type    = int,
-        choices = [1, 2, 3, 4, 5, 6],
+        choices = [1, 2, 3, 4, 5, 6, 7, 8],
         default = None,
-        help    = "Run a specific phase (1-6). Omit to run all."
+        help    = "Run a specific phase (1-8). Omit to run all."
     )
     parser.add_argument(
         "--from-phase",
         type    = int,
-        choices = [1, 2, 3, 4, 5, 6],
+        choices = [1, 2, 3, 4, 5, 6, 7, 8],
         default = 1,
         help    = "Start from a specific phase and run to end."
     )
     args = parser.parse_args()
 
     phases = {
-        1: run_phase1,
-        2: run_phase2,
-        3: run_phase3,
-        4: run_phase4,
-        5: run_phase5,
-        6: run_phase6,
-    }
+    1: run_phase1,
+    2: run_phase2,
+    3: run_phase3,
+    4: run_phase4,
+    5: run_phase5,
+    6: run_phase6,
+    7: run_cert_pipeline,
+    8: run_cert_models_phase,
+}
 
     if args.phase:
         log.info(f"Running Phase {args.phase} only")
         phases[args.phase]()
     else:
         start = args.from_phase
-        log.info(f"Running phases {start} -> 6")
-        for phase_num in range(start, 7):
+        log.info(f"Running phases {start} -> 8")
+        for phase_num in range(start, 9):
             success = phases[phase_num]()
             if not success:
                 log.error(f"Phase {phase_num} failed — stopping")

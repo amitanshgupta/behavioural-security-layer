@@ -1,0 +1,862 @@
+[
+  {
+    "alert_id": "ALT-004820",
+    "timestamp": "2026-04-19T19:12:22.583526",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.943,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.650, SHAP: +3.121) | src bytes is abnormally high (value=6.000, SHAP: +2.818) | dst host srv count is abnormally high (value=1.000, SHAP: +1.291)",
+    "lime_narrative": "LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.233) | anomalous_login_flag <= 0.00 (reducing risk, weight=-0.218) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.206)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.943\n  Alert triggered: dst host suspicion score is abnormally high (value=0.650, SHAP: +3.121) | src bytes is abnormally high (value=6.000, SHAP: +2.818) | dst host srv count is abnormally high (value=1.000, SHAP: +1.291)\n  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.233) | anomalous_login_flag <= 0.00 (reducing risk, weight=-0.218) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.206)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1206,
+        "raw_value": 0.65,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8177,
+        "raw_value": 6.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.2914,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.2326,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "anomalous_login_flag <= 0.00",
+        "weight": -0.2184,
+        "direction": "decreases risk"
+      },
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.2062,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 11.0,
+      "src_bytes": 6.0,
+      "dst_bytes": 0.0,
+      "count": 510.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.01,
+      "rerror_rate": 0.97,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 6.0,
+      "connection_rate": 0.5,
+      "error_rate_combined": 0.2455,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1704851049971558,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.6499999999999999,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0004870795924903,
+      "src_bytes_peer_zscore": -0.023831050753384,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.023066233476532,
+      "duration_peer_zscore": -0.1622912581023063,
+      "genai_composite_score": 0.3195349304037054,
+      "api_call_pattern_score": 0.2988281584258385,
+      "data_exfil_proxy": 9.167583425009e-06,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-015249",
+    "timestamp": "2026-04-19T19:12:22.623270",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9429,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.639, SHAP: +3.115) | src bytes is abnormally high (value=6.000, SHAP: +2.839) | dst host srv count is abnormally high (value=1.000, SHAP: +1.225)",
+    "lime_narrative": "LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.209) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.199) | duration_peer_zscore <= -0.10 (reducing risk, weight=-0.130)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.943\n  Alert triggered: dst host suspicion score is abnormally high (value=0.639, SHAP: +3.115) | src bytes is abnormally high (value=6.000, SHAP: +2.839) | dst host srv count is abnormally high (value=1.000, SHAP: +1.225)\n  LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.209) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.199) | duration_peer_zscore <= -0.10 (reducing risk, weight=-0.130)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1153,
+        "raw_value": 0.6395,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8392,
+        "raw_value": 6.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.2249,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.209,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.199,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "duration_peer_zscore <= -0.10",
+        "weight": -0.1304,
+        "direction": "decreases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 2.0,
+      "src_bytes": 6.0,
+      "dst_bytes": 0.0,
+      "count": 510.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.01,
+      "rerror_rate": 0.95,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 6.0,
+      "connection_rate": 0.5,
+      "error_rate_combined": 0.2405,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1706817673398212,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.6395,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0004870795924903,
+      "src_bytes_peer_zscore": -0.023831050753384,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.023066233476532,
+      "duration_peer_zscore": -0.1681911283822695,
+      "genai_composite_score": 0.3195459315038154,
+      "api_call_pattern_score": 0.2988281584258385,
+      "data_exfil_proxy": 3.6670333700036e-05,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-001678",
+    "timestamp": "2026-04-19T19:12:22.675941",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9409,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)",
+    "lime_narrative": "LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.210) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.205) | src_bytes <= 0.00 (pushing toward attack, weight=+0.187)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.941\n  Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)\n  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.210) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.205) | src_bytes <= 0.00 (pushing toward attack, weight=+0.187)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1186,
+        "raw_value": 0.632,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.2098,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.2049,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes <= 0.00",
+        "weight": 0.1869,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.16,
+      "rerror_rate": 0.84,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.458,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.6319999999999999,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-013340",
+    "timestamp": "2026-04-19T19:12:22.728871",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9409,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)",
+    "lime_narrative": "LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.250) | is_root_escalation <= 0.00 (reducing risk, weight=-0.232) | dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.199)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.941\n  Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)\n  LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.250) | is_root_escalation <= 0.00 (reducing risk, weight=-0.232) | dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.199)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1186,
+        "raw_value": 0.632,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.2499,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "is_root_escalation <= 0.00",
+        "weight": -0.2315,
+        "direction": "decreases risk"
+      },
+      {
+        "condition": "dst_host_srv_count <= 10.00",
+        "weight": 0.1986,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.16,
+      "rerror_rate": 0.83,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.4555,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.6319999999999999,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-014545",
+    "timestamp": "2026-04-19T19:12:22.772623",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9409,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.629, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)",
+    "lime_narrative": "LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.216) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.166) | anomalous_login_flag <= 0.00 (reducing risk, weight=-0.140)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.941\n  Alert triggered: dst host suspicion score is abnormally high (value=0.629, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)\n  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.216) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.166) | anomalous_login_flag <= 0.00 (reducing risk, weight=-0.140)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1186,
+        "raw_value": 0.629,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.2165,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.1655,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "anomalous_login_flag <= 0.00",
+        "weight": -0.14,
+        "direction": "decreases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.17,
+      "rerror_rate": 0.83,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.4585,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.629,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-015900",
+    "timestamp": "2026-04-19T19:12:22.832939",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9409,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.629, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)",
+    "lime_narrative": "LIME context: dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.213) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.187) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.180)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.941\n  Alert triggered: dst host suspicion score is abnormally high (value=0.629, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)\n  LIME context: dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.213) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.187) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.180)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1186,
+        "raw_value": 0.629,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "dst_host_srv_count <= 10.00",
+        "weight": 0.2129,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.1867,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.1803,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.17,
+      "rerror_rate": 0.83,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.4585,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.629,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-002533",
+    "timestamp": "2026-04-19T19:12:22.879628",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.94,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.626, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)",
+    "lime_narrative": "LIME context: anomalous_login_flag <= 0.00 (reducing risk, weight=-0.241) | dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.164) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.159)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.940\n  Alert triggered: dst host suspicion score is abnormally high (value=0.626, SHAP: +3.119) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)\n  LIME context: anomalous_login_flag <= 0.00 (reducing risk, weight=-0.241) | dst_host_srv_count <= 10.00 (pushing toward attack, weight=+0.164) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.159)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1186,
+        "raw_value": 0.626,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "anomalous_login_flag <= 0.00",
+        "weight": -0.2411,
+        "direction": "decreases risk"
+      },
+      {
+        "condition": "dst_host_srv_count <= 10.00",
+        "weight": 0.1636,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.1591,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.15,
+      "rerror_rate": 0.84,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.455,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.626,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-004375",
+    "timestamp": "2026-04-19T19:12:22.923136",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.94,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.623, SHAP: +2.968) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.436)",
+    "lime_narrative": "LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.210) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.197) | src_bytes <= 0.00 (pushing toward attack, weight=+0.193)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.940\n  Alert triggered: dst host suspicion score is abnormally high (value=0.623, SHAP: +2.968) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.436)\n  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.210) | src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.197) | src_bytes <= 0.00 (pushing toward attack, weight=+0.193)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 2.9678,
+        "raw_value": 0.623,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.4359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.2096,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.1969,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes <= 0.00",
+        "weight": 0.1927,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.15,
+      "rerror_rate": 0.84,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.455,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.623,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-002739",
+    "timestamp": "2026-04-19T19:12:22.978094",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9395,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.638, SHAP: +3.112) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.360)",
+    "lime_narrative": "LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.220) | dst_bytes <= 0.00 (pushing toward attack, weight=+0.162) | privilege_abuse_score <= 0.00 (pushing toward attack, weight=+0.156)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.940\n  Alert triggered: dst host suspicion score is abnormally high (value=0.638, SHAP: +3.112) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.360)\n  LIME context: dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.220) | dst_bytes <= 0.00 (pushing toward attack, weight=+0.162) | privilege_abuse_score <= 0.00 (pushing toward attack, weight=+0.156)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1121,
+        "raw_value": 0.638,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.3597,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.2203,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "dst_bytes <= 0.00",
+        "weight": 0.1616,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "privilege_abuse_score <= 0.00",
+        "weight": 0.1562,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.13,
+      "rerror_rate": 0.87,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.4565,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.6379999999999999,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  },
+  {
+    "alert_id": "ALT-000310",
+    "timestamp": "2026-04-19T19:12:23.022763",
+    "severity": "CRITICAL",
+    "ensemble_score": 0.9393,
+    "shap_score": 1.0,
+    "base_value": -0.2063,
+    "shap_narrative": "Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.118) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)",
+    "lime_narrative": "LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.209) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.180) | src_bytes <= 0.00 (pushing toward attack, weight=+0.162)",
+    "summary": "[!!!] [CRITICAL] Risk Score: 0.939\n  Alert triggered: dst host suspicion score is abnormally high (value=0.632, SHAP: +3.118) | src bytes is abnormally high (value=0.000, SHAP: +2.836) | dst host srv count is abnormally high (value=1.000, SHAP: +1.359)\n  LIME context: src_bytes_peer_zscore <= -0.01 (pushing toward attack, weight=+0.209) | dst_host_suspicion_score > 0.37 (pushing toward attack, weight=+0.180) | src_bytes <= 0.00 (pushing toward attack, weight=+0.162)",
+    "top_shap_features": [
+      {
+        "feature": "dst_host_suspicion_score",
+        "shap_value": 3.1184,
+        "raw_value": 0.632,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "src_bytes",
+        "shap_value": 2.8356,
+        "raw_value": 0.0,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "dst_host_srv_count",
+        "shap_value": 1.359,
+        "raw_value": 1.0,
+        "direction": "increases risk"
+      }
+    ],
+    "lime_conditions": [
+      {
+        "condition": "src_bytes_peer_zscore <= -0.01",
+        "weight": 0.209,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "dst_host_suspicion_score > 0.37",
+        "weight": 0.1804,
+        "direction": "increases risk"
+      },
+      {
+        "condition": "src_bytes <= 0.00",
+        "weight": 0.162,
+        "direction": "increases risk"
+      }
+    ],
+    "raw_features": {
+      "duration": 0.0,
+      "src_bytes": 0.0,
+      "dst_bytes": 0.0,
+      "count": 511.0,
+      "srv_count": 1.0,
+      "serror_rate": 0.13,
+      "rerror_rate": 0.87,
+      "same_srv_rate": 0.0,
+      "diff_srv_rate": 1.0,
+      "dst_host_count": 255.0,
+      "dst_host_srv_count": 1.0,
+      "bytes_ratio": 0.0,
+      "connection_rate": 0.5009784735812133,
+      "error_rate_combined": 0.4565,
+      "service_diversity_score": 1.0,
+      "peer_outlier_score": 0.1710278480097086,
+      "auth_failure_rate": 0.0,
+      "privilege_abuse_score": 0.0,
+      "is_root_escalation": 0.0,
+      "anomalous_login_flag": 0.0,
+      "dst_host_suspicion_score": 0.6319999999999999,
+      "same_service_ratio_delta": 0.0,
+      "file_access_intensity": 0.0,
+      "is_suspicious_file_activity": 0.0,
+      "is_large_transfer": 0.0,
+      "bytes_above_peer_mean": 0.0,
+      "src_bytes_peer_zscore": -0.0238426649717638,
+      "dst_bytes_peer_zscore": -0.1056536829857118,
+      "count_peer_zscore": 4.032125957070336,
+      "duration_peer_zscore": -0.1695022106667058,
+      "genai_composite_score": 0.319765625,
+      "api_call_pattern_score": 0.2994140624999999,
+      "data_exfil_proxy": 0.0,
+      "rapid_request_flag": 1.0
+    },
+    "true_label": 1,
+    "analyst_action": null
+  }
+]
